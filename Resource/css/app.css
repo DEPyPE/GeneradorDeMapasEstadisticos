@@ -1,0 +1,92 @@
+
+body{
+	background-color: rgb(240, 240, 240);
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card-map{
+	position: fixed !important;
+	height: 650px !important;
+	width: 902px !important;
+}
+
+#mapa_guanajuato{
+    position: relative;
+    background-color: white;
+    margin: 15px !important;
+    width: 100% !important;
+	height: 630px !important;
+}
+
+.seg-logo{
+    width: 200px !important;
+    border-radius: 80px !important;
+}
+
+.main-container{
+    padding-left: 300px !important;
+}
+
+.collapsible-title{
+    padding: 0 0 0 20px !important;
+    color: rgb(80, 80, 80) !important;
+}
+
+.icon-padding-right{
+    margin-right: 15px !important;
+}
+
+.icon-color{
+    color: rgb(80, 80, 80) !important;
+}
+
+.card-parameters{
+    position: fixed !important;
+    height: 100%;
+    height: calc(100% + 60px);
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.card-map{
+    width: 70% !important;
+    height: 100% !important;
+    height: calc(100% + 60px);
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    overflow-y: auto !important;
+}
+
+.map-title{
+    margin-bottom: 40px !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+}
+
+.card-map-content{
+    padding-top: 35px !important;
+
+}
+
+.sidenav .user-view {
+    padding: 15px 32px 0px !important;
+}
+
+#mapa_guanajuato{
+}
+
+.col-map{
+    padding-left: 5% !important;
+    padding-right: 0 !important;
+}
+
+header, main, footer {
+    padding-left: 300px;
+  }
+
+  @media only screen and (max-width : 992px) {
+    header, main, footer {
+      padding-left: 0;
+    }
+}
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map creator</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="Resource/css/app.css">
+    <link rel="stylesheet" href="Resource/Materialize/materialize.min.css">
+</head>
+<body>
+
+<!--    Indice de Desarrollo Humano -->
+
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="Resource/images/bg2.jpeg">
+                </div>
+
+                <a href="#user"><img class="seg-logo" src="Resource/images/seg-logo.jpeg"></a>
+                <a href="#name"><span class="white-text name">Dirección General de Evaluación Educativa (DGEE)</span></a>
+                <a href="#email"><span class="white-text">Creador de Mapas Estadísticos</span></a>
+            </div>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header collapsible-title"><i class="material-icons left icon-color">font_download</i> Título del mapa <i class="material-icons right icon-padding-right icon-color">arrow_drop_down</i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="#!"><i class="material-icons">title</i>Texto</a></li>
+                    <li><a href="#!"><i class="material-icons">format_size</i> Tamaño del texto</a></li>
+                    <li><a href="#!"><i class="material-icons">format_bold</i> Negrita</a></li>
+                    <li><a href="#!"><i class="material-icons">format_italic</i>Cursiva</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header collapsible-title"><i class="material-icons left icon-color">pie_chart</i> Datos del mapa <i class="material-icons right icon-padding-right icon-color">arrow_drop_down</i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="#!"><i class="material-icons">create</i>Datos por municipio</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header collapsible-title"><i class="material-icons left icon-color">dashboard</i> Categorías <i class="material-icons right icon-padding-right icon-color">arrow_drop_down</i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="#!"><i class="material-icons">exposure</i> Número de categorías</a></li>
+                    <li><a href="#!"><i class="material-icons">title</i> Nombre de las categorías</a></li>
+                    <li><a href="#!"><i class="material-icons">color_lens</i> Color de categorías</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="main-container">
+
+        <div class="row ">
+            <div class="col l7 m7 col-map">
+                <div class="card card-map">
+                    <div class="card-content card-map-content">
+                        <span class="card-title map-title center-align">Título del mapa de ejemplo</span>
+                        <div id="mapa_guanajuato"><div>   
+                    </div>
+                </div>     
+            </div>
+        </div>
+    </div>
+    
+    <!-- JQuery -->
+    <script src="Resource/jQuery/jquery-3.2.1.min.js"></script>
+
+    <!-- Materialize -->
+    <script src="Resource/Materialize/materialize.min.js"></script>
+
+    <!-- Amchart4 -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/region/mexico/guaHigh.js"></script>
+
+    <!-- Own script-->
+    <script src="Resource/js/app.js"></script>
+</body>
+</html>
