@@ -1,4 +1,6 @@
 
+    /* Variables and objects */
+
     DataGuanajuatoStates = [
         {id:"11001", COUNTYID:"001", COUNTY:"Abasolo",                                           STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", AnalfabetismoIndex: '7.6',   AbsorcionSecundaria: '94.6',     AbsorcionMS: "77.9",    AbsorcionSuperior: "75.4",      NumHabitantes: "92040"  ,    CoberturaPreescolar: "62.6",    CoberturaPrimaria:  "99.5" ,       CoberturaSecundaria: "88.0" ,    CoberturaMediaSuperior: "54.0" ,     CoberturaSuperior: "27.8" ,   IndiceReprobacionPrimaria:  "0.1",     IndiceReprobacionSecundaria:    "4.9",       IndiceReprobacionMS: "23.3",        EficienciaTerminalPrimaria: "96.9",         EficienciaTerminalSecundaria: "86.2",       EficienciaTerminalMediaSuperior: "40.3",        AbandonoEscolarPrimaria: "0.38",        AbandonoEscolarSecundaria: "4.9",        AbandonoEscolarMediaSuperior: "6.2",        AbandonoEscolarSuperior: "13.2",      RezagoSocial: "Bajo"    ,    IDH:    "0.675"     },
         {id:"11002", COUNTYID:"002", COUNTY:"Acámbaro",                                          STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", AnalfabetismoIndex: '7.3',   AbsorcionSecundaria: '91.7',     AbsorcionMS: "86.1",    AbsorcionSuperior: "28.0",      NumHabitantes: "108697" ,    CoberturaPreescolar: "67.8",    CoberturaPrimaria:  "99.7" ,       CoberturaSecundaria: "89.4" ,    CoberturaMediaSuperior: "68.0" ,     CoberturaSuperior: "17.3" ,   IndiceReprobacionPrimaria:  "0.1",     IndiceReprobacionSecundaria:    "2.6",       IndiceReprobacionMS: "19.5",        EficienciaTerminalPrimaria: "95.2",         EficienciaTerminalSecundaria: "87.1",       EficienciaTerminalMediaSuperior: "64.3",        AbandonoEscolarPrimaria: "0.97",        AbandonoEscolarSecundaria: "3.8",        AbandonoEscolarMediaSuperior: "13.4",       AbandonoEscolarSuperior: "4.3",       RezagoSocial: "Muy bajo",    IDH:    "0.699"     },
@@ -77,11 +79,12 @@
             Range4: "#4e342e",
         }],
         Blue_Grey: [{
-            Range1: "#cfd8dc",
-            Range2: "#90a4ae",
-            Range3: "#607d8b",
-            Range4: "#37474f",
-            Range5: "#263238",
+            Range1: "#eceff1",
+            Range2: "#b0bec5",
+            Range3: "#78909c",
+            Range4: "#546e7a",
+            Range5: "#37474f",
+            Range6: "#263238",
         }],
         Teal: [{
             Range1: "#b2dfdb",
@@ -103,6 +106,10 @@
             Range5: "#1a237e",
         }]
     }
+
+    var initSizeTitle = 30;
+    var titleBold = false;
+    var titleItalic = false;
 
     function Object2Vector(ObjectPropertie){
         var vector = [];
@@ -280,11 +287,248 @@
         chart.legend.align = "right";
     }
 
+    function ShowUpdatedMap(CategoryName){
+        $('#mapa_guanajuato').empty();
+
+        var DataColor = localStorage.getItem('CategoryColor');
+        var CategoryColor = JSON.parse(DataColor);
+
+        var chart = am4core.create("mapa_guanajuato", am4maps.MapChart);
+        chart.geodata = am4geodata_region_mexico_guaHigh;
+        chart.projection = new am4maps.projections.Miller();
+        chart.zIndex = 10;
+
+        var r1 = [], r2 = [], r3 = [], r4 = [], counter = 0;
+
+        for(var i=0; i<DataGuanajuatoStates.length; i++){
+
+            if( counter <= 11 )
+                r1.push( DataGuanajuatoStates[i].id );
+            else if( counter > 11 && counter <= 22 )
+                r2.push( DataGuanajuatoStates[i].id );
+            else if( counter > 22 && counter <= 33 )
+                r3.push( DataGuanajuatoStates[i].id );
+            else
+                r4.push( DataGuanajuatoStates[i].id );
+
+            counter = counter + 1;
+        }
+        
+        /* Sin color */
+        var c1 = chart.series.push(new am4maps.MapPolygonSeries());
+        c1.name = CategoryName[0];
+        c1.useGeodata = true;
+        c1.include = r1;
+        c1.mapPolygons.template.fill = am4core.color( CategoryColor[0].Range1 );
+        c1.fill = am4core.color( CategoryColor[0].Range1 );
+
+        var pts1 = c1.mapPolygons.template;
+        pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
+
+        var c2 = chart.series.push(new am4maps.MapPolygonSeries());
+        c2.name = CategoryName[1];
+        c2.useGeodata = true;
+        c2.include = r2;
+        c2.mapPolygons.template.fill = am4core.color( CategoryColor[0].Range2 );
+        c2.fill = am4core.color( CategoryColor[0].Range2 );
+
+        var pts1 = c2.mapPolygons.template;
+        pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
+
+        var c3 = chart.series.push(new am4maps.MapPolygonSeries());
+        c3.name = CategoryName[2];
+        c3.useGeodata = true;
+        c3.include = r3;
+        c3.mapPolygons.template.fill = am4core.color( CategoryColor[0].Range3 );
+        c3.fill = am4core.color( CategoryColor[0].Range3 );
+
+        var pts1 = c3.mapPolygons.template;
+        pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
+
+        var c4 = chart.series.push(new am4maps.MapPolygonSeries());
+        c4.name = CategoryName[3];
+        c4.useGeodata = true;
+        c4.include = r4;
+        c4.mapPolygons.template.fill = am4core.color( CategoryColor[0].Range4 );
+        c4.fill = am4core.color( CategoryColor[0].Range4 );
+
+        var pts1 = c4.mapPolygons.template;
+        pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
+
+        chart.legend = new am4maps.Legend();
+        chart.legend.position = "right";
+        chart.legend.align = "right";
+    }
+
     $(function(){
         $('.sidenav').sidenav();
         $('.collapsible').collapsible();
+//        $('.sidenav-trigger').click();
+
+        $('#txt-title').val( $('.map-title').text() );
+        $('.map-title').css('font-size', initSizeTitle, 'important');
+        $('.collection-map-categories-btn').click();
+
+        $('.blue-gray-color-category5 ').css('display', 'none');
+        $('.brown-color-category5     ').css('display', 'none');
+        $('.green-color-category5     ').css('display', 'none');
+        $('.teal-color-category5      ').css('display', 'none');
+        $('.blue-color-category5      ').css('display', 'none');
+        $('.purple-color-category5    ').css('display', 'none');
+        $('.cyan-color-category5      ').css('display', 'none');
+        $('.indigo-color-category5    ').css('display', 'none');
+
+        $('.blue-gray-color-category6').css('display', 'none');
+        $('.brown-color-category6    ').css('display', 'none');
+        $('.green-color-category6    ').css('display', 'none');
+        $('.teal-color-category6     ').css('display', 'none');
+        $('.blue-color-category6     ').css('display', 'none');
+        $('.purple-color-category6   ').css('display', 'none');
+        $('.cyan-color-category6     ').css('display', 'none');
+        $('.indigo-color-category6   ').css('display', 'none');
 
         EmptyMap();
+    });
+
+    $('#txtCategory1').on('change', function(){
+        var categories_name = [$('#txtCategory1').val(), $('#txtCategory2').val(), $('#txtCategory3').val(), $('#txtCategory4').val()];
+
+        ShowUpdatedMap(categories_name);
+    });
+
+    $('#txtCategory2').on('change', function(){
+        var categories_name = [$('#txtCategory1').val(), $('#txtCategory2').val(), $('#txtCategory3').val(), $('#txtCategory4').val()];
+
+        ShowUpdatedMap(categories_name);
+    });
+
+    $('#txtCategory3').on('change', function(){
+        var categories_name = [$('#txtCategory1').val(), $('#txtCategory2').val(), $('#txtCategory3').val(), $('#txtCategory4').val()];
+
+        ShowUpdatedMap(categories_name);
+    });
+
+    $('#txtCategory4').on('change', function(){
+        var categories_name = [$('#txtCategory1').val(), $('#txtCategory2').val(), $('#txtCategory3').val(), $('#txtCategory4').val()];
+
+        ShowUpdatedMap(categories_name);
+    });
+
+    $('#txt-title').on('change keydown keyup', function(){
+        $('.map-title').text( $('#txt-title').val() );
+    });
+
+    $('#RadioButtons_CategoriesColor').on('change', function(){
+        var selected_color = $('input:radio[name=group1]:checked').val();
+        var categories_name = [$('#txtCategory1').val(), $('#txtCategory2').val(), $('#txtCategory3').val(), $('#txtCategory4').val()];
+        var categories_color;
+
+        if( selected_color == "blue-gray" ){
+            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Blue_Grey) );
+        }else if( selected_color == "brown" ){
+            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Brown) );
+        }else if( selected_color == "green" ){
+            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Green) );
+        }else if( selected_color == "teal" ){
+            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Teal) );
+        }else if( selected_color == "cyan" ){
+            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Cyan) );
+        }else if( selected_color == "blue" ){
+            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Blue) );
+        }else if( selected_color == "indigo" ){
+            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Indigo) );
+        }else if( selected_color == "purple" ){
+            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Purple) );
+        }
+
+        ShowUpdatedMap(categories_name);        
+    });
+
+    /* CONTROLES PARA INCREMENTAR O DECREMENTAR EL TAMAÑO DEL TÍTULO */
+    $('#btn-more-size-title').on('click', function(){
+        var size_title = parseInt( $('#txt-size-text').val().split(' ')[0] );
+    
+        if( size_title < 35 )
+            size_title = size_title + 1;
+        else
+            M.toast({html: 'Max 35', classes: 'rounded'});
+
+        $('.map-title').css('font-size', size_title, 'important');
+        $('#txt-size-text').val(size_title);
+    });
+
+    $('#btn-less-size-title').on('click', function(){
+        var size_title = parseInt( $('#txt-size-text').val().split(' ')[0] );
+
+        if( size_title > 20 )
+            size_title = size_title - 1;
+        else
+            M.toast({html: 'Min 20', classes: 'rounded'});
+    
+        $('.map-title').css('font-size', size_title, 'important');
+        $('#txt-size-text').val(size_title);
+    });
+
+    /* CONTROLES PARA INCREMENTAR O DECREMENTAR EL NÚMERO DE CATEGORÍAS DEL MAPA */
+    $('#btn-more-categories').on('click', function(){
+        var num_categories = parseInt( $('#txtNumCategories').val() );
+        console.log( num_categories );
+
+        if( num_categories < 6 ){
+            num_categories = num_categories + 1;
+        }else
+            M.toast({html: 'Max 6', classes: 'rounded'});
+
+
+
+        $('#txtNumCategories').val(num_categories);
+    });
+
+    $('#btn-less-categories').on('click', function(){
+        var size_title = parseInt( $('#txtNumCategories').val() );
+
+        if( size_title > 2 )
+            size_title = size_title - 1;
+        else
+            M.toast({html: 'Min 2', classes: 'rounded'});
+    
+        $('#txtNumCategories').val(size_title);
+    });
+
+    $('#checkboxTextBold').on('change', function(){
+        var checked = $('#checkboxTextBold').prop('checked');
+
+        if( checked )
+            $('.map-title').css('font-weight', 'bold');
+        else
+            $('.map-title').css('font-weight', 'normal');
+    });
+
+    $('#checkboxTextItalic').on('change', function(){
+        var checked = $('#checkboxTextItalic').prop('checked');
+
+        if( checked )
+            $('.map-title').css('font-style', 'italic');
+        else
+            $('.map-title').css('font-style', 'normal');
+    });
+
+    $('.btn-format-title').on('click', function(){
+        $('.collection-data').hide();
+        $('.collection-title-format').show();
+        $('.collection-map-categories').hide();
+    });
+
+    $('.btn-data-city').on('click', function(){
+        $('.collection-data').show();
+        $('.collection-title-format').hide();
+        $('.collection-map-categories').hide();
+    });
+
+    $('.collection-map-categories-btn').on('click', function(){
+        $('.collection-data').hide();
+        $('.collection-title-format').hide();
+        $('.collection-map-categories').show();
     });
 
 /*  Label template
