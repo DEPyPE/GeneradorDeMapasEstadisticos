@@ -240,14 +240,16 @@
 
             counter = counter + 1;
         }
+
+        var PlaneBackground = "rgba(230, 230, 230, 1)";
         
         /* Sin color */
         var c1 = chart.series.push(new am4maps.MapPolygonSeries());
         c1.name = "Categoría 1";
         c1.useGeodata = true;
         c1.include = r1;
-        c1.mapPolygons.template.fill = am4core.color( ColorPalette.Cyan[0].Range1 );
-        c1.fill = am4core.color( ColorPalette.Cyan[0].Range1 );
+        c1.mapPolygons.template.fill = am4core.color( PlaneBackground );
+        c1.fill = am4core.color( PlaneBackground );
 
         var pts1 = c1.mapPolygons.template;
         pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
@@ -256,8 +258,8 @@
         c2.name = "Categoría 2";
         c2.useGeodata = true;
         c2.include = r2;
-        c2.mapPolygons.template.fill = am4core.color( ColorPalette.Cyan[0].Range2 );
-        c2.fill = am4core.color( ColorPalette.Cyan[0].Range2 );
+        c2.mapPolygons.template.fill = am4core.color( PlaneBackground);
+        c2.fill = am4core.color( PlaneBackground );
 
         var pts1 = c2.mapPolygons.template;
         pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
@@ -266,8 +268,8 @@
         c3.name = "Categoría 3";
         c3.useGeodata = true;
         c3.include = r3;
-        c3.mapPolygons.template.fill = am4core.color( ColorPalette.Cyan[0].Range3 );
-        c3.fill = am4core.color( ColorPalette.Cyan[0].Range3 );
+        c3.mapPolygons.template.fill = am4core.color( PlaneBackground );
+        c3.fill = am4core.color( PlaneBackground );
 
         var pts1 = c3.mapPolygons.template;
         pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
@@ -276,8 +278,8 @@
         c4.name = "Categoría 4";
         c4.useGeodata = true;
         c4.include = r4;
-        c4.mapPolygons.template.fill = am4core.color( ColorPalette.Cyan[0].Range4 );
-        c4.fill = am4core.color( ColorPalette.Cyan[0].Range4 );
+        c4.mapPolygons.template.fill = am4core.color( PlaneBackground );
+        c4.fill = am4core.color( PlaneBackground );
 
         var pts1 = c4.mapPolygons.template;
         pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
@@ -288,10 +290,12 @@
     }
 
     function ShowUpdatedMap(CategoryName){
+        var CategoryMaxMin = UpdateCategoryLimits();
+
         $('#mapa_guanajuato').empty();
 
         var DataColor = localStorage.getItem('CategoryColor');
-        var CategoryColor = JSON.parse(DataColor);
+        var CategoryColor = JSON.parse( DataColor );
 
         var chart = am4core.create("mapa_guanajuato", am4maps.MapChart);
         chart.geodata = am4geodata_region_mexico_guaHigh;
@@ -302,13 +306,13 @@
 
         for(var i=0; i<DataGuanajuatoStates.length; i++){
 
-            if( counter <= 11 )
+                 if( parseFloat( DataGuanajuatoStates[i].AnalfabetismoIndex ) >= parseFloat(CategoryMaxMin[0]) && parseFloat( DataGuanajuatoStates[i].AnalfabetismoIndex ) <= parseFloat(CategoryMaxMin[1]) )
                 r1.push( DataGuanajuatoStates[i].id );
-            else if( counter > 11 && counter <= 22 )
+            else if( DataGuanajuatoStates[i].AnalfabetismoIndex >= parseFloat(CategoryMaxMin[2]) && DataGuanajuatoStates[i].AnalfabetismoIndex <= parseFloat(CategoryMaxMin[3]) )
                 r2.push( DataGuanajuatoStates[i].id );
-            else if( counter > 22 && counter <= 33 )
+            else if( DataGuanajuatoStates[i].AnalfabetismoIndex >= parseFloat(CategoryMaxMin[4]) && DataGuanajuatoStates[i].AnalfabetismoIndex <= parseFloat(CategoryMaxMin[5]) )
                 r3.push( DataGuanajuatoStates[i].id );
-            else
+            else if( DataGuanajuatoStates[i].AnalfabetismoIndex >= parseFloat(CategoryMaxMin[6]) && DataGuanajuatoStates[i].AnalfabetismoIndex <= parseFloat(CategoryMaxMin[7]) )
                 r4.push( DataGuanajuatoStates[i].id );
 
             counter = counter + 1;
@@ -323,7 +327,7 @@
         c1.fill = am4core.color( CategoryColor[0].Range1 );
 
         var pts1 = c1.mapPolygons.template;
-        pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
+        pts1.stroke = am4core.color("rgba(230, 230, 230, 1)");
 
         var c2 = chart.series.push(new am4maps.MapPolygonSeries());
         c2.name = CategoryName[1];
@@ -343,7 +347,7 @@
         c3.fill = am4core.color( CategoryColor[0].Range3 );
 
         var pts1 = c3.mapPolygons.template;
-        pts1.stroke = am4core.color("rgba(108, 108, 108, 1)");
+        pts1.stroke = am4core.color("rgba(230, 230, 230, 1)");
 
         var c4 = chart.series.push(new am4maps.MapPolygonSeries());
         c4.name = CategoryName[3];
@@ -358,6 +362,23 @@
         chart.legend = new am4maps.Legend();
         chart.legend.position = "right";
         chart.legend.align = "right";
+    }
+
+    function UpdateCategoryLimits(){
+        var cat1_min = $('#txtCategory1_Min').val();
+        var cat1_max = $('#txtCategory1_Max').val();
+
+        var cat2_min = $('#txtCategory2_Min').val();
+        var cat2_max = $('#txtCategory2_Max').val();
+
+        var cat3_min = $('#txtCategory3_Min').val();
+        var cat3_max = $('#txtCategory3_Max').val();
+
+        var cat4_min = $('#txtCategory4_Min').val();
+        var cat4_max = $('#txtCategory4_Max').val();
+
+        var MaxMinVector = [cat1_min, cat1_max, cat2_min, cat2_max, cat3_min, cat3_max, cat4_min, cat4_max];
+        return MaxMinVector;
     }
 
     $(function(){
@@ -424,24 +445,43 @@
         var categories_color;
 
         if( selected_color == "blue-gray" ){
-            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Blue_Grey) );
+            categories_color = ColorPalette.Blue_Grey;
         }else if( selected_color == "brown" ){
-            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Brown) );
+            categories_color = ColorPalette.Brown;
         }else if( selected_color == "green" ){
-            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Green) );
+            categories_color = ColorPalette.Green;
         }else if( selected_color == "teal" ){
-            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Teal) );
+            categories_color = ColorPalette.Teal;
         }else if( selected_color == "cyan" ){
-            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Cyan) );
+            categories_color = ColorPalette.Cyan;
         }else if( selected_color == "blue" ){
-            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Blue) );
+            categories_color = ColorPalette.Blue;
         }else if( selected_color == "indigo" ){
-            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Indigo) );
+            categories_color = ColorPalette.Indigo;
         }else if( selected_color == "purple" ){
-            localStorage.setItem('CategoryColor', JSON.stringify(ColorPalette.Purple) );
+            categories_color = ColorPalette.Purple;
         }
 
-        ShowUpdatedMap(categories_name);        
+        localStorage.setItem('CategoryColor', JSON.stringify(categories_color) );
+
+        $('.color-category1').css({
+            'background-color': categories_color[0].Range1
+        });
+
+        $('.color-category2').css({
+            'background-color': categories_color[0].Range2
+        });
+
+        $('.color-category3').css({
+            'background-color': categories_color[0].Range3
+        });
+
+        $('.color-category4').css({
+            'background-color': categories_color[0].Range4
+        });
+
+        ShowUpdatedMap(categories_name);
+        UpdateCategoryLimits();
     });
 
     /* CONTROLES PARA INCREMENTAR O DECREMENTAR EL TAMAÑO DEL TÍTULO */

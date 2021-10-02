@@ -11,10 +11,10 @@ body{
 }
 
 #mapa_guanajuato{
-    position: relative;
+    position: fixed;
     background-color: white;
     margin: 15px !important;
-    width: 100% !important;
+    width: 1000px !important;
 	height: 630px !important;
 }
 
@@ -38,6 +38,10 @@ body{
 
 .icon-color{
     color: rgb(80, 80, 80) !important;
+}
+
+.available-maps{
+    display: none !important;
 }
 
 /* ESTILOS PARA LA BARRA DE NAVEGACIÓN DE LOS PARÁMETROS */
@@ -188,6 +192,15 @@ body{
     }
 
 /*  ESTILOS PARA LAS CATEGORIAS     */
+    .color-category1, .color-category2, .color-category3,
+    .color-category4{
+        background-color: rgba(230, 230, 230, 1);
+        color: rgba(230, 230, 230, 0) !important;
+        width: 35px !important;
+        height: 35px !important;
+        padding: 5px 5px 5px 5px;
+    }
+
     .select-colors{
         margin-top: 15px !important;
     }
@@ -205,6 +218,10 @@ body{
     
     .collection-item-num-categories{
         display: none !important;
+    }
+
+    .category1-minmax-container{
+        
     }
 
     /*          BLUE GRAY COLOR           */
@@ -496,6 +513,27 @@ body{
         background-color: #1a237e;
         margin-left: -5px !important;
     }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/*    ESTILOS PARA LOS NOMBRES DE LOS MUNICIPIOS   */
+.lblGuanajuato, .lblLeon{
+    position: absolute !important;
+    z-index: 100;
+    display: none;
+}
+
+.lblLeon{
+    left: 28%;
+    top: 41%;
+    font-size: 20px;
+}
+
+.lblGuanajuato{
+    left: 38.8%;
+    top: 47.8%;
+    font-size: 14px;
+}
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - */
 
