@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map creator</title>
+    <title>Generador de Mapas Estadísticos</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="Resource/css/app.css">
@@ -12,6 +12,8 @@
 <body>
  
     <ul id="sidenav-tools" class="sidenav sidenav-fixed">
+
+      <!-- INFORMACIÓN DE LA PLATAFORMA -->
         <li>
             <div class="user-view">
                 <div class="background">
@@ -19,29 +21,61 @@
                 </div>
 
                 <a href="#user"><img class="seg-logo" src="Resource/images/seg-logo.jpeg"></a>
-                <a href="#name"><span class="white-text name">Dirección General de Evaluación Educativa (DGEE)</span></a>
-                <a href="#email"><span class="white-text">Creador de Mapas Estadísticos</span></a>
+                <a href="#name"><span class="white-text name">Dirección General de Política Educativa (DGPE)</span></a>
+                <a href="#email"><span class="white-text">Generador de Mapas Estadísticos</span></a>
             </div>
         </li>
 
-        <li class="no-padding">
-          <li>
-            <a class="collapsible-title sidenav-trigger btn-data-city" href="#" data-target="slide-out"><i class="material-icons left icon-color">pie_chart</i> Datos del mapa</a>
+        <!-- SELECTOR DE MAPAS -->
+        <li class="no-padding" >
+          <li class="select-maps">
+            <h6>Mapas disponibles</h6>
+          
+            <div class="row mb-0">
+              <div class="col l10">
+                <select class="browser-default">
+                  <option value="1">Título de mapa</option>
+                  <option value="2">Título de mapa (1)</option>
+                </select>
+              </div>
+              <div class="col l2">
+                <a class="btn-floating waves-effect blue darken-2 btn-create-new-map white-text tooltipped" data-position="bottom" data-tooltip="Crear nuevo mapa"><i class="material-icons left white-color">add</i></a>
+              </div>
+            </div>
+
           </li>
         </li>
 
-        <li class="no-padding">
+        <!-- DATOS POR MUNICIPIO -->
+        <li class="no-padding menu-map-option">
+          <li>
+            <a class="collapsible-title sidenav-trigger btn-data-city" href="#" data-target="slide-out"><i class="material-icons left icon-color">pie_chart</i> Datos por municipio</a>
+          </li>
+        </li>
+
+        <!-- TÍTULO DEL MAPA -->
+        <li class="no-padding menu-map-option">
           <li>
             <a class="collapsible-title sidenav-trigger btn-format-title" href="#" data-target="slide-out"><i class="material-icons left icon-color">font_download</i> Título del mapa</a>
           </li>
         </li>
 
-        <li class="no-padding">
+        <!-- COLOR DEL MAPA -->
+        <li class="no-padding menu-map-option">
           <li>
+            <a class="collapsible-title sidenav-trigger btn-map-color-pallete" href="#" data-target="slide-out"><i class="material-icons left icon-color">palette</i>Esquema de colores</a>
+          </li>
+        </li>
+
+        <!-- CATEGORÍAS -->
+        <li class="no-padding menu-map-option">
+          <li class="menu-map-option-category">
             <a class="collapsible-title sidenav-trigger collection-map-categories-btn" href="#" data-target="slide-out"><i class="material-icons left icon-color">dashboard</i> Categorías</a>
           </li>
         </li>
-        
+
+        <!-- GUARDAR MAPA -->
+        <a class="btn-small waves-effect light-blue darken-1 btn-save-map" ><i class="material-icons left white-color">cloud_upload</i>Guardar mapa</a>
     </ul>
 
     <ul id="slide-out" class="sidenav">
@@ -50,20 +84,7 @@
 
       <ul class="collection with-header collection-data">
 
-        <li class="collection-header"><h5>Datos por cada municipio</h5></li>
-
-        <li class="collection-item collection-item-title-format available-maps">
-            <h6>Mapas disponibles</h6>
-            
-            <select class="browser-default">
-              <option value="" disabled selected>Selecciona un mapa</option>
-              <option value="1">Título de mapa</option>
-              <option value="2">Título de mapa (1)</option>
-            </select>
-
-            <a class="btn-flat waves-effect waves-light blue darken-2 white-text btn-new-map center-align"> <i class="material-icons white-text left">add</i> Nuevo mapa</a>
-
-        </li>
+        <li class="collection-header"><h5>Datos por municipio</h5></li>
 
         <li class="collection-item collection-item-title-format">
 
@@ -73,322 +94,323 @@
               <h6 class="">Abasolo</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtAbasoloParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtAbasoloValue"  value="37.88" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Acambaro</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtAcambaroParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtAcambaroValue" value="40.14" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">San Miguel de Allende</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSanMiguelParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSanMiguelValue" value="39.84" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
+            </div>
+            
+            <div class="col l7">
+              <h6 class="">Apaseo el grande</h6>
+            </div>
+            <div class="input-field txtTitle-container col l5">
+              <input id="txtApaseoElGrandeValue" value="39.47" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Apaseo el alto</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtApaseoElAltoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtApaseoElAltoValue" value="42.60" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
-            <div class="col l7">
-              <h6 class="">Apaseo el grande</h6>
-            </div>
-            <div class="input-field txtTitle-container col l5">
-              <input id="txtApaseoElGrandeParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
-            </div>
 
             <div class="col l7">
               <h6 class="">Atarjea</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtAtarjeaParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtAtarjeaValue" value="45.64" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Celaya</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtCelayaParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtCelayaValue" value="37.27" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Manuel Doblado</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtManuelDobladoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtManuelDobladoValue" value="41.68" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Comonfort</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtComonfortParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtComonfortValue" value="38.67" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Coroneo</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtCoroneoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtCoroneoValue" value="38.14" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Cortazar</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtCortazarParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtCortazarValue" value="38.88" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Cuerámaro</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtCueramaroParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtCueramaroValue" value="36.84" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Doctor Mora</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtDoctorMoraParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtDoctorMoraValue" value="40.23" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Dolores Hidalgo</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtDoloresHidalgoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtDoloresHidalgoValue" value="38.71" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Guanajuato</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtGuanajuatoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtGuanajuatoValue" value="42.36" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Huanímaro</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtHuanimaroParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtHuanimaroValue" value="38.38" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Irapuato</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtIrapuatoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtIrapuatoValue" value="39.42" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Jaral del Progeso</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtJaralDelProgesoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtJaralDelProgesoValue" value="44.50" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Jerécuaro</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtJerecuaroParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtJerecuaroValue" value="37.11" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">León</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtLeonParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtLeonValue" value="39.27" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Moroleón</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtMoroleonParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtMoroleonValue" value="37.15" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Ocampo</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtOcampoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtOcampoValue" value="36.42" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Pénjamo</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtPenjamoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtPenjamoValue" value="38.85" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Pueblo Nuevo</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtPuebloNuevoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtPuebloNuevoValue" value="37.40" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Purísima del Rincón</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtPurisimaDelRinconParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtPurisimaDelRinconValue" value="36.46" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Romita</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtRomitaParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtRomitaValue" value="41.89" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Salamanca</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSalamancaParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSalamancaValue" value="44.19" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Salvatierra</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSalvatierraParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSalvatierraValue" value="37.23" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">San Diego de la Unión</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSanDiegoDeLaUnionParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSanDiegoDeLaUnionValue" value="35.32" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">San Felipe</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSanFelipeParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSanFelipeValue" value="38.57" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">San Francisco del Rincón</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSanFranciscoDelRinconParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSanFranciscoDelRinconValue" value="41.47" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">San José Iturbide</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSanJoseIturbideParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSanJoseIturbideValue" value="40.60" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">San Luis de la Paz</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSanLuisDeLaPazParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSanLuisDeLaPazValue" value="38.08" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Santa Catarina</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSantaCatarinaParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSantaCatarinaValue" value="34.28" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Santa Cruz de Juventino Rosas</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSantaCruzDeJuventinoRosasParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSantaCruzDeJuventinoRosasValue" value="37.24" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Santiago Maravatío</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSantiagoMaravatíoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSantiagoMaravatíoValue" value="34.50" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Silao</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtSilaoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtSilaoValue" value="38.52" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Tarandacuao</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtTarandacuaoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtTarandacuaoValue" value="40.62" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Tarimoro</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtTarimoroParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtTarimoroValue" value="40.77" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Tierra Blanca</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtTierraBlancaParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtTierraBlancaValue" value="35.27" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Uriangato</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtUriangatoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtUriangatoValue" value="44.26" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Valle de Santiago</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtValleDeSantiagoParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtValleDeSantiagoValue" value="40.37" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Victoria</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtVictoriaParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtVictoriaValue" value="37.12" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Villagrán</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtVillagranParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtVillagranValue" value="40.89" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Xichú</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtXichuParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtXichuValue" value="36.68" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
             <div class="col l7">
               <h6 class="">Yuriria</h6>
             </div>
             <div class="input-field txtTitle-container col l5">
-              <input id="txtYuririaParam" type="text" class="validate txtTitle center-align" placeholder="Valor">
+              <input id="txtYuririaValue" value="40.24" type="text" class="validate txtTitle center-align txtValueCity" placeholder="Valor">
             </div>
 
           </div>
@@ -396,56 +418,180 @@
         </li>
       </ul>
 
-        <ul class="collection with-header collection-title-format">
-        <li class="collection-header"><h5>Formato al título del mapa</h5></li>
+      <ul class="collection with-header collection-title-format">
+      <li class="collection-header"><h5>Formato al título del mapa</h5></li>
 
-        <li  class="collection-item collection-item-title-format">
-          <div class="input-field txtTitle-container">
-            <i class="material-icons prefix">title</i>
-            <input id="txt-title" type="text" class="validate txtTitle" placeholder="Texto del título">
+      <li  class="collection-item collection-item-title-format">
+        <div class="input-field txtTitle-container">
+          <i class="material-icons prefix">title</i>
+          <input id="txt-title" type="text" class="validate txtTitle" placeholder="Texto del título">
+        </div>
+      </li>
+
+      <li class="collection-item collection-item-title-format">
+        <i class="material-icons left">format_size</i> Tamaño del texto
+
+        <div class="container-size-text">
+          <div class="input-field">
+              <input disabled id="txt-size-text" type="text" class="validate" value="30">
+          </div>
+
+          <div class="position-size-text-buttons">
+              <button id="btn-more-size-title" class="waves-effect waves btn light-blue darken-3 size-text-icon"><i class="large material-icons">expand_less</i></button>
+              <button id="btn-less-size-title" class="waves-effect waves btn light-blue darken-3 size-text-icon"><i class="large material-icons">expand_more</i></button>
+          </div>
+        </div>
+      
+      </li>
+
+      <li class="collection-item collection-item-title-format">
+          <div class="bold-text-title">
+            <div> <i class="material-icons left">format_bold</i> Texto en negrita  </div>
+            <div class="switch switch-bold-text">
+                <label>
+                    <input id="checkboxTextBold" type="checkbox">
+                    <span  class="lever"></span>
+                </label>
+            </div>
+          </div>
+      </li>
+
+      <li class="collection-item collection-item-title-format">
+          <div class="italic-text-title">
+            <div> <i class="material-icons left">format_italic</i>Texto en cursiva </div>
+            <div class="switch switch-italic-text">
+                <label>
+                    <input id="checkboxTextItalic" type="checkbox">
+                    <span  class="lever"></span>
+                </label>
+            </div>
+          </div>
+      </li>
+      </ul>
+
+      <ul class="collection with-header collection-map-color-palette">
+        <li class="collection-header"><h5>Esquema de colores</h5></li>
+
+        <li class="collection-item collection-item-color-palette">
+          <div class="row color-palett-container">
+            <form id="RadioButtons_CategoriesColor" action="#">
+              <p class="radio-button-container">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value="blue-gray" />
+                  <span>
+                    <i class="material-icons prefix blue-gray-color-category1">label</i>
+                    <i class="material-icons prefix blue-gray-color-category2">label</i>
+                    <i class="material-icons prefix blue-gray-color-category3">label</i>
+                    <i class="material-icons prefix blue-gray-color-category4">label</i>
+                    <i class="title-color-radio-button">Blue gray</i>
+                    <!--<i class="material-icons prefix blue-gray-color-category5">label</i>
+                    <i class="material-icons prefix blue-gray-color-category6">label</i>-->
+                  </span>
+                </label>
+              </p>
+              <p class="radio-button-container">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value="brown" />
+                  <span>
+                    <i class="material-icons prefix brown-color-category1">label</i>
+                    <i class="material-icons prefix brown-color-category2">label</i>
+                    <i class="material-icons prefix brown-color-category3">label</i>
+                    <i class="material-icons prefix brown-color-category4">label</i>
+                    <i class="title-color-radio-button">Brown</i>
+                    <!--<i class="material-icons prefix brown-color-category5">label</i>
+                    <i class="material-icons prefix brown-color-category6">label</i>-->
+                  </span>
+                </label>
+              </p>
+              <p class="radio-button-container">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value="green" />
+                  <span>
+                    <i class="material-icons prefix green-color-category1">label</i>
+                    <i class="material-icons prefix green-color-category2">label</i>
+                    <i class="material-icons prefix green-color-category3">label</i>
+                    <i class="material-icons prefix green-color-category4">label</i>
+                    <i class="title-color-radio-button">Green</i>
+                    <!--<i class="material-icons prefix green-color-category5">label</i>
+                    <i class="material-icons prefix green-color-category6">label</i>-->
+                  </span>
+                </label>
+              </p>
+              <p class="radio-button-container">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value="teal" />
+                  <span>
+                    <i class="material-icons prefix teal-color-category1">label</i>
+                    <i class="material-icons prefix teal-color-category2">label</i>
+                    <i class="material-icons prefix teal-color-category3">label</i>
+                    <i class="material-icons prefix teal-color-category4">label</i>
+                    <i class="title-color-radio-button">Teal</i>
+                    <!--<i class="material-icons prefix teal-color-category5">label</i>
+                    <i class="material-icons prefix teal-color-category6">label</i>-->
+                  </span>
+                </label>
+              </p>
+              <p class="radio-button-container">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value="cyan" />
+                  <span>
+                    <i class="material-icons prefix cyan-color-category1">label</i>
+                    <i class="material-icons prefix cyan-color-category2">label</i>
+                    <i class="material-icons prefix cyan-color-category3">label</i>
+                    <i class="material-icons prefix cyan-color-category4">label</i>
+                    <i class="title-color-radio-button">Cyan</i>
+                    <!--<i class="material-icons prefix cyan-color-category5">label</i>
+                    <i class="material-icons prefix cyan-color-category6">label</i>-->
+                  </span>
+                </label>
+              </p>
+              <p class="radio-button-container">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value="blue" />
+                  <span>
+                    <i class="material-icons prefix blue-color-category1">label</i>
+                    <i class="material-icons prefix blue-color-category2">label</i>
+                    <i class="material-icons prefix blue-color-category3">label</i>
+                    <i class="material-icons prefix blue-color-category4">label</i>
+                    <i class="title-color-radio-button">Blue</i>
+                    <!--<i class="material-icons prefix blue-color-category5">label</i>
+                    <i class="material-icons prefix blue-color-category6">label</i>-->
+                  </span>
+                </label>
+              </p>
+              <p class="radio-button-container">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value="indigo" />
+                  <span>
+                    <i class="material-icons prefix indigo-color-category1">label</i>
+                    <i class="material-icons prefix indigo-color-category2">label</i>
+                    <i class="material-icons prefix indigo-color-category3">label</i>
+                    <i class="material-icons prefix indigo-color-category4">label</i>
+                    <i class="title-color-radio-button">Indigo</i>
+                    <!--<i class="material-icons prefix indigo-color-category5">label</i>
+                    <i class="material-icons prefix indigo-color-category6">label</i>-->
+                  </span>
+                </label>
+              </p>
+              <p class="radio-button-container">
+                <label>
+                  <input class="with-gap" name="group1" type="radio" value="purple" />
+                  <span>
+                    <i class="material-icons prefix purple-color-category1">label</i>
+                    <i class="material-icons prefix purple-color-category2">label</i>
+                    <i class="material-icons prefix purple-color-category3">label</i>
+                    <i class="material-icons prefix purple-color-category4">label</i>
+                    <i class="title-color-radio-button">Purple</i>
+                    <!--<i class="material-icons prefix purple-color-category5">label</i>
+                    <i class="material-icons prefix purple-color-category6">label</i>-->
+                  </span>
+                </label>
+              </p>
+            </form>
           </div>
         </li>
 
-        <li class="collection-item collection-item-title-format">
-          <i class="material-icons left">format_size</i> Tamaño del texto
-
-          <div class="container-size-text">
-            <div class="input-field">
-                <input disabled id="txt-size-text" type="text" class="validate" value="30">
-            </div>
-
-            <div class="position-size-text-buttons">
-                <button id="btn-more-size-title" class="waves-effect waves btn light-blue darken-3 size-text-icon"><i class="large material-icons">expand_less</i></button>
-                <button id="btn-less-size-title" class="waves-effect waves btn light-blue darken-3 size-text-icon"><i class="large material-icons">expand_more</i></button>
-            </div>
-          </div>
-        
-        </li>
-
-        <li class="collection-item collection-item-title-format">
-            <div class="bold-text-title">
-              <div> <i class="material-icons left">format_bold</i> Texto en negrita  </div>
-              <div class="switch switch-bold-text">
-                  <label>
-                      <input id="checkboxTextBold" type="checkbox">
-                      <span  class="lever"></span>
-                  </label>
-              </div>
-            </div>
-        </li>
-
-        <li class="collection-item collection-item-title-format">
-            <div class="italic-text-title">
-              <div> <i class="material-icons left">format_italic</i>Texto en cursiva </div>
-              <div class="switch switch-italic-text">
-                  <label>
-                      <input id="checkboxTextItalic" type="checkbox">
-                      <span  class="lever"></span>
-                  </label>
-              </div>
-            </div>
-        </li>
-        </ul>
+      </ul>
 
       <ul class="collection with-header collection-map-categories">
         <li class="collection-header"><h5>Categorías del mapa</h5></li>
@@ -467,117 +613,20 @@
         </li>
 
         <li class="collection-item collection-item-title-format">
-          
-          <i class="material-icons left">palette</i> Color de categorías
-          
-          <div class="row color-palett-container">
+          <i class="material-icons left">settings</i> Parámetros de las categorías <br><br>
 
-            <form id="RadioButtons_CategoriesColor" action="#">
-              <p class="radio-button-container">
-                <label>
-                  <input class="with-gap" name="group1" type="radio" value="blue-gray" />
-                  <span>
-                    <i class="material-icons prefix blue-gray-color-category1">label</i>
-                    <i class="material-icons prefix blue-gray-color-category2">label</i>
-                    <i class="material-icons prefix blue-gray-color-category3">label</i>
-                    <i class="material-icons prefix blue-gray-color-category4">label</i>
-                    <i class="material-icons prefix blue-gray-color-category5">label</i>
-                    <i class="material-icons prefix blue-gray-color-category6">label</i>
-                  </span>
-                </label>
-              </p>
-              <p class="radio-button-container">
-                <label>
-                  <input class="with-gap" name="group1" type="radio" value="brown" />
-                  <span>
-                    <i class="material-icons prefix brown-color-category1">label</i>
-                    <i class="material-icons prefix brown-color-category2">label</i>
-                    <i class="material-icons prefix brown-color-category3">label</i>
-                    <i class="material-icons prefix brown-color-category4">label</i>
-                    <i class="material-icons prefix brown-color-category5">label</i>
-                    <i class="material-icons prefix brown-color-category6">label</i>
-                  </span>
-                </label>
-              </p>
-              <p class="radio-button-container">
-                <label>
-                  <input class="with-gap" name="group1" type="radio" value="green" />
-                  <span>
-                    <i class="material-icons prefix green-color-category1">label</i>
-                    <i class="material-icons prefix green-color-category2">label</i>
-                    <i class="material-icons prefix green-color-category3">label</i>
-                    <i class="material-icons prefix green-color-category4">label</i>
-                    <i class="material-icons prefix green-color-category5">label</i>
-                    <i class="material-icons prefix green-color-category6">label</i>
-                  </span>
-                </label>
-              </p>
-              <p class="radio-button-container">
-                <label>
-                  <input class="with-gap" name="group1" type="radio" value="teal" />
-                  <span>
-                    <i class="material-icons prefix teal-color-category1">label</i>
-                    <i class="material-icons prefix teal-color-category2">label</i>
-                    <i class="material-icons prefix teal-color-category3">label</i>
-                    <i class="material-icons prefix teal-color-category4">label</i>
-                    <i class="material-icons prefix teal-color-category5">label</i>
-                    <i class="material-icons prefix teal-color-category6">label</i>
-                  </span>
-                </label>
-              </p>
-              <p class="radio-button-container">
-                <label>
-                  <input class="with-gap" name="group1" type="radio" value="cyan" />
-                  <span>
-                    <i class="material-icons prefix cyan-color-category1">label</i>
-                    <i class="material-icons prefix cyan-color-category2">label</i>
-                    <i class="material-icons prefix cyan-color-category3">label</i>
-                    <i class="material-icons prefix cyan-color-category4">label</i>
-                    <i class="material-icons prefix cyan-color-category5">label</i>
-                    <i class="material-icons prefix cyan-color-category6">label</i>
-                  </span>
-                </label>
-              </p>
-              <p class="radio-button-container">
-                <label>
-                  <input class="with-gap" name="group1" type="radio" value="blue" />
-                  <span>
-                    <i class="material-icons prefix blue-color-category1">label</i>
-                    <i class="material-icons prefix blue-color-category2">label</i>
-                    <i class="material-icons prefix blue-color-category3">label</i>
-                    <i class="material-icons prefix blue-color-category4">label</i>
-                    <i class="material-icons prefix blue-color-category5">label</i>
-                    <i class="material-icons prefix blue-color-category6">label</i>
-                  </span>
-                </label>
-              </p>
-              <p class="radio-button-container">
-                <label>
-                  <input class="with-gap" name="group1" type="radio" value="indigo" />
-                  <span>
-                    <i class="material-icons prefix indigo-color-category1">label</i>
-                    <i class="material-icons prefix indigo-color-category2">label</i>
-                    <i class="material-icons prefix indigo-color-category3">label</i>
-                    <i class="material-icons prefix indigo-color-category4">label</i>
-                    <i class="material-icons prefix indigo-color-category5">label</i>
-                    <i class="material-icons prefix indigo-color-category6">label</i>
-                  </span>
-                </label>
-              </p>
-              <p class="radio-button-container">
-                <label>
-                  <input class="with-gap" name="group1" type="radio" value="purple" />
-                  <span>
-                    <i class="material-icons prefix purple-color-category1">label</i>
-                    <i class="material-icons prefix purple-color-category2">label</i>
-                    <i class="material-icons prefix purple-color-category3">label</i>
-                    <i class="material-icons prefix purple-color-category4">label</i>
-                    <i class="material-icons prefix purple-color-category5">label</i>
-                    <i class="material-icons prefix purple-color-category6">label</i>
-                  </span>
-                </label>
-              </p>
-            </form>
+          <div class="row">
+            <div class="col l12">
+              <label>
+                <input type="checkbox" id="checkbox-title-ranges"/>
+                <span class="checkbox-container chboxTitleRange">Utilizar rangos como título</span>
+              </label>
+
+              <label>
+                <input type="checkbox" id="checkbox-title-porcentage"/>
+                <span class="checkbox-container chboxTitlePorcentage">Rangos en porcentaje</span>
+              </label>
+            </div>
           </div>
 
         </li>
@@ -585,102 +634,171 @@
         <li class="collection-item collection-item-title-format">
           <i class="material-icons left">title</i> Nombre y rangos de las categorías <br><br>
 
-          <div class="input-field txtTitle-container">
+          <div class="input-field dataCategoriesContainer">
             <i class="material-icons prefix color-category1">label</i>
-            <input id="txtCategory1" type="text" class="validate center-align" placeholder="Categoría 1" value="Muy bajo">
+            <input id="txtCategory1" type="text" class="validate center-align txtCategoriesValues" placeholder="Categoría 1" value="Muy bajo">
             <label for="first_name">Categoría 1</label>
 
-            <div class="row">
+            <div class="row mb-0">
               <div class="col l2"></div>
               <div class="input-field col l5">
-                <input id="txtCategory1_Min" type="text" class="validate center-align" value="3.3">
+                <input id="txtCategory1_Min" type="text" class="validate center-align txtCategoriesValues" value="34.28">
                 <label for="first_name">Mínimo</label>
               </div>
   
               <div class="input-field col l5">
-                <input id="txtCategory1_Max" type="text" class="validate center-align" value="5.6">
+                <input id="txtCategory1_Max" type="text" class="validate center-align txtCategoriesValues" value="37.12">
                 <label for="first_name">Máximo</label>
               </div>
+            </div>
+
+            <div class="row">
+                <div class="col l2"></div>
+                <div class="col l10">
+
+                  Color de las etiquetas
+                  <div class="switch switch-category-1">
+                    <label>
+                      <i class="material-icons icon-white-text-color">label</i>
+                      <input type="checkbox" name="switch-cat-1">
+                      <span class="lever"></span>
+                      <i class="material-icons icon-black-text-color">label</i>
+                    </label>
+                  </div>
+                  
+                </div>
+            
             </div>
             
           </div>
 
-          <div class="input-field txtTitle-container">
+          <div class="input-field dataCategoriesContainer">
             <i class="material-icons prefix color-category2">label</i>
-            <input id="txtCategory2" type="text" class="validate txtTitle center-align" value="Bajo">
+            <input id="txtCategory2" type="text" class="validate txtTitle center-align txtCategoriesValues" value="Bajo">
             <label for="first_name">Categoría 2</label>
 
-            <div class="row category1-minmax-container">
+            <div class="row mb-0">
               <div class="col l2"></div>
               <div class="input-field col l5">
-                <input id="txtCategory2_Min" type="text" class="validate center-align" value="5.7">
+                <input id="txtCategory2_Min" type="text" class="validate center-align txtCategoriesValues" value="37.13">
                 <label for="first_name">Mínimo</label>
               </div>
   
               <div class="input-field col l5">
-                <input id="txtCategory2_Max" type="text" class="validate center-align" value="7.8">
+                <input id="txtCategory2_Max" type="text" class="validate center-align txtCategoriesValues" value="40.06">
                 <label for="first_name">Máximo</label>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col l2"></div>
+              <div class="col l10">
+
+                Color de las etiquetas
+                <div class="switch switch-category-2">
+                  <label>
+                    <i class="material-icons icon-white-text-color">label</i>
+                    <input type="checkbox" name="switch-cat-2">
+                    <span class="lever"></span>
+                    <i class="material-icons icon-black-text-color">label</i>
+                  </label>
+                </div>
+                
+              </div>
+          
+          </div>
           </div>
 
-          <div class="input-field txtTitle-container">
+          <div class="input-field dataCategoriesContainer">
             <i class="material-icons prefix color-category3">label</i>
-            <input id="txtCategory3" type="text" class="validate txtTitle center-align" placeholder="Categoría 3" value="Medio">
+            <input id="txtCategory3" type="text" class="validate txtTitle center-align txtCategoriesValues" placeholder="Categoría 3" value="Medio">
             <label for="first_name">Categoría 3</label>
 
             <div class="row category1-minmax-container">
               <div class="col l2"></div>
               <div class="input-field col l5">
-                <input id="txtCategory3_Min" type="text" class="validate center-align" value="7.9">
+                <input id="txtCategory3_Min" type="text" class="validate center-align txtCategoriesValues" value="40.07">
                 <label for="first_name">Mínimo</label>
               </div>
   
               <div class="input-field col l5">
-                <input id="txtCategory3_Max" type="text" class="validate center-align" value="10.1">
+                <input id="txtCategory3_Max" type="text" class="validate center-align txtCategoriesValues" value="43.00">
                 <label for="first_name">Máximo</label>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col l2"></div>
+              <div class="col l10">
+
+                Color de las etiquetas
+                <div class="switch switch-category-3">
+                  <label>
+                    <i class="material-icons icon-white-text-color">label</i>
+                    <input type="checkbox" name="switch-cat-3">
+                    <span class="lever"></span>
+                    <i class="material-icons icon-black-text-color">label</i>
+                  </label>
+                </div>
+                
+              </div>
+          
+          </div>
           </div>
 
-          <div class="input-field txtTitle-container">
+          <div class="input-field dataCategoriesContainer">
             <i class="material-icons prefix color-category4">label</i>
-            <input id="txtCategory4" type="text" class="validate txtTitle" placeholder="Categoría 4" value="Alto">
+            <input id="txtCategory4" type="text" class="validate txtTitle center-align txtCategoriesValues" placeholder="Categoría 4" value="Alto">
             <label for="first_name">Categoría 4</label>
 
             <div class="row category1-minmax-container">
               <div class="col l2"></div>
               <div class="input-field col l5">
-                <input id="txtCategory4_Min" type="text" class="validate center-align" value="10.2">
+                <input id="txtCategory4_Min" type="text" class="validate center-align txtCategoriesValues" value="43.01">
                 <label for="first_name">Mínimo</label>
               </div>
   
               <div class="input-field col l5">
-                <input id="txtCategory4_Max" type="text" class="validate center-align" value="14.6">
+                <input id="txtCategory4_Max" type="text" class="validate center-align txtCategoriesValues" value="45.64">
                 <label for="first_name">Máximo</label>
               </div>
+            </div>
+
+            <div class="row">
+              <div class="col l2"></div>
+              <div class="col l10">
+
+                Color de las etiquetas
+                <div class="switch switch-category-4">
+                  <label>
+                    <i class="material-icons icon-white-text-color">label</i>
+                    <input type="checkbox" name="switch-cat-4">
+                    <span class="lever"></span>
+                    <i class="material-icons icon-black-text-color">label</i>
+                  </label>
+                </div>
+                
+              </div>
+          
             </div>
 
           </div>
 
         </li>
 
-
       </ul>
 
     </ul>
 
     <div class="main-container">
+        <!-- GUARDAR MAPA COMO IMAGEN -->
+        <a class="btn-floating btn-large blue-grey darken-1 waves-effect btnConvert2Image tooltipped" data-position="bottom" data-tooltip="Descargar mapa como imagen"><i class="material-icons white-color">archive</i></a>
 
         <div class="row ">
             <div class="col l7 m7 col-map">
                 <div class="card card-map">
                     <div class="card-content card-map-content">
                         <span class="card-title map-title center-align">Título del mapa de ejemplo</span>
-                        <div class="names-cities-container">
-                          <p class="lblGuanajuato">Guanajuato</p>
-                          <p class="lblLeon">León</p>
-                        </div>
                         <div id="mapa_guanajuato"><div>   
                     </div>
                 </div>     
@@ -688,6 +806,10 @@
         </div>
     </div>
     
+    <!-- Convertit HTML A IMAGEN -->
+    <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     <!-- JQuery -->
     <script src="Resource/jQuery/jquery-3.2.1.min.js"></script>
 

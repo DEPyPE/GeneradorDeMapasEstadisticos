@@ -4,6 +4,23 @@ body{
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* HELPERS */
+.mb-0{
+    margin-bottom: 0 !important;
+}
+
+.mb-20{
+    margin-bottom: 20px !important;
+}
+
+.border-rounded25{
+    border-radius: 25px !important;
+}
+
+.border-rounded15{
+    border-radius: 15px !important;
+}
+
 .card-map{
 	position: fixed !important;
 	height: 650px !important;
@@ -21,6 +38,10 @@ body{
 .seg-logo{
     width: 200px !important;
     border-radius: 80px !important;
+}
+
+.sidenav .name {
+    font-size: 18px !important;
 }
 
 .main-container{
@@ -60,9 +81,42 @@ body{
     }
 
     .txtTitle-container{
-        margin: 0 0 0 0 !important;
+        margin: 0 !important;
     }
 
+    .dataCategoriesContainer{
+        margin-bottom: 50px !important;
+    }
+
+    .switch-category-1, .switch-category-2, .switch-category-3,
+    .switch-category-4, .switch-category-5{
+        margin-top: 10px !important;
+        margin-bottom: -30px !important;
+    }
+
+    .checkbox-container{
+        margin: 4px 0 !important;
+    }
+
+    .checkbox-container{
+        color: black !important;
+    }
+
+    .btn-new-map{
+        position: absolute !important;
+        right: -30px !important;
+        color: white !important;
+    }
+
+    .btn-save-map{
+        width: 70% !important;
+        top: 20px;
+        left: 50% !important;
+        transform: translateX(-50%);
+        border-radius: 15px !important;
+    }
+
+    /*
     .btn-new-map {
         margin: 15px 0 0 0 !important;
         width: 100% !important;
@@ -76,16 +130,46 @@ body{
         vertical-align: middle !important;
         -webkit-tap-highlight-color: transparent !important;
     }
+    */
 
     .btn-new-map>i{
         line-height: 36px !important;
         margin-right: 0 !important;
     }
 
+    .select-maps{
+        padding: 3px 25px 20px 25px;
+        border-top: 1px solid lightgray !important;
+    }
+
+    .menu-map-option{
+        border-top: 1px solid lightgray !important;
+    }
+
+    .menu-map-option-category{
+        border-bottom: 1px solid lightgray !important;
+    }
+    
+    .btnConvert2Image{
+        position: absolute !important;
+        top: 5%;
+        left: 23.5%;
+        width: 300px;
+    }
+
+/*  ESTILOS PARA LA PALETA DE COLORES */
+    .title-color-radio-button{
+        position: absolute;
+        width: 100px;
+        font-style: normal !important;
+        padding: 0px 10px 10px 15px !important;
+        color: black;
+    }
+
 /*  ESTILOS PARA EL TAMAÑO DE FUENTE */
 
     .collection-title-format, .collection-map-categories,
-    .collection-data{
+    .collection-data, .collection-map-color-palette{
         margin: 15px 15px 15px 15px !important;
     }
 
@@ -93,6 +177,10 @@ body{
         padding-left: 15px !important;
         padding-right: 20px !important;
         padding-top: 12px !important;
+    }
+
+    .collection-item-color-palette{
+        padding: 10px 10px 10px 10px !important;
     }
 
     .container-size-text div{
@@ -105,12 +193,6 @@ body{
         margin-left: -8%;
         text-align: center;
         
-    }
-
-    .laser-intensity{
-        margin: 6px 20px 10px 45px;
-        width: 50%;
-        border: 1px solid black;
     }
 
     #txt-size-text, #txtNumCategories{
@@ -159,6 +241,8 @@ body{
         right: 0;
     }
 
+    
+
     .bold-text-title, .italic-text-title{
         margin: 0px 0px 0px 0px;
     }
@@ -191,6 +275,14 @@ body{
         margin-right: 10px !important;
     }
 
+    .sidenav-overlay{
+        background: none !important;
+    }
+
+    .border-radius{
+        border-radius: 25px !important;
+    }
+
 /*  ESTILOS PARA LAS CATEGORIAS     */
     .color-category1, .color-category2, .color-category3,
     .color-category4{
@@ -199,6 +291,30 @@ body{
         width: 35px !important;
         height: 35px !important;
         padding: 5px 5px 5px 5px;
+    }
+
+    .icon-white-text-color{
+        border: 1px solid darkgray;
+        background-color: white;
+        color: rgba(230, 230, 230, 0) !important;
+        width: 35px !important;
+        height: 35px !important;
+        padding: 5px 5px 5px 5px;
+        border-radius: 50%;
+    }
+
+    .lever{
+        margin: 0 5px 18px 5px !important;
+    }
+
+    .icon-black-text-color{
+        border: 1px solid darkgray;
+        background-color: black;
+        color: rgba(230, 230, 230, 0) !important;
+        width: 35px !important;
+        height: 35px !important;
+        padding: 5px 5px 5px 5px;
+        border-radius: 50%;
     }
 
     .select-colors{
@@ -546,28 +662,37 @@ body{
 }
 
 .card-map{
-    width: 70% !important;
-    height: 100% !important;
-    height: calc(100% + 60px);
-    margin-top: 0 !important;
-    margin-bottom: 10px !important;
-    overflow-y: auto !important;
+    width: 65% !important;
+    height: 92% !important;
+    margin-top: 25px !important;
+    overflow: hidden !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-radius: 15px !important;
 }
 
 .map-title{
-    margin-bottom: 40px !important;
+    margin-bottom: 20px !important;
 }
 
 .card-map-content{
     padding-top: 35px !important;
-
+    height: 102% !important;
+    background-color: white !important;
 }
 
 .sidenav .user-view {
     padding: 15px 32px 0px !important;
 }
 
+#slide-out{
+    width: 25% !important;
+}
+
 #mapa_guanajuato{
+    position: absolute;
+    border-radius: 25px;
+    height: 80% !important;
+    width: 90% !important;
 }
 
 .col-map{
