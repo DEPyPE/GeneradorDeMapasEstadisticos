@@ -67,12 +67,8 @@ body{
 
 /* ESTILOS PARA LA BARRA DE NAVEGACIÓN DE LOS PARÁMETROS */
 
-    .sidenav-parameters{
-        z-index: 100 !important;
-    }
-
-    .sidenav-tools{
-        z-index: 10 !important;
+    .sidenav{
+        width: 21% !important;
     }
 
     .txtTitle-container{
@@ -101,11 +97,35 @@ body{
     .checkbox-container{
         color: black !important;
     }
-
-    .btn-new-map{
-        position: absolute !important;
-        right: -30px !important;
+    
+    .btn-create-new-map .add-icon{
         color: white !important;
+        margin-left: 13px !important;
+        margin-top: 4px !important;
+        text-align: center !important;
+        font-size: 28px;
+    }
+
+    .col-p0{
+        padding: 0 !important;
+    }
+
+    .fixed-action-btn {
+        display: none;
+        position: fixed !important;
+        top: 5% !important;
+        left: 25.5rem !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        width: 60px !important;
+        height: 60px !important;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 600 !important;
+    }
+
+    .fixed-action-btn.direction-right ul li {
+        margin: 7.5px 0 0 8px !important;
     }
 
     .btn-save-map{
@@ -114,6 +134,12 @@ body{
         left: 50% !important;
         transform: translateX(-50%);
         border-radius: 15px !important;
+    }
+
+    .select-maps .option-maps-names{
+        width: 100% !important;
+        max-height: 15px !important;
+        height: 15px !important;
     }
 
     /*
@@ -151,10 +177,7 @@ body{
     }
     
     .btnConvert2Image{
-        position: absolute !important;
-        top: 5%;
-        left: 23.5%;
-        width: 300px;
+        
     }
 
 /*  ESTILOS PARA LA PALETA DE COLORES */
@@ -238,10 +261,13 @@ body{
 /*  ESTILOS PARA LOS SWITCH */
     .switch-bold-text, .switch-italic-text{
         position: absolute;
-        right: 0;
+        right: 15px;
+        margin-top: 5px;
     }
 
-    
+    .tooltipped{
+        
+    }
 
     .bold-text-title, .italic-text-title{
         margin: 0px 0px 0px 0px;
@@ -261,13 +287,6 @@ body{
       
     .switch label input[type=checkbox]:checked+.lever:after {
         background-color: #01579b !important;
-    }
-
-/*  BOTÓN PARA CERRAR LA SIDENAV*/
-    .btn-close-sidenav{
-        position: absolute !important;
-        right: 0 !important;
-        margin: 5px 5px 5px 50% !important;
     }
 
     .icon-close-sidenav{
@@ -685,7 +704,14 @@ body{
 }
 
 #slide-out{
-    width: 25% !important;
+    padding-top: 35px !important;
+}
+
+/*  BOTÓN PARA CERRAR LA SIDENAV*/
+.btn-close-sidenav{
+    position: absolute !important;
+    top: 8px !important;
+    right: 10px !important;
 }
 
 #mapa_guanajuato{
@@ -693,6 +719,49 @@ body{
     border-radius: 25px;
     height: 80% !important;
     width: 90% !important;
+    z-index: 600 !important;
+}
+
+.sidenav-options-preloader{
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(240, 240, 240, 0.5) !important;
+    backdrop-filter: blur(6px) !important;
+}
+
+.card-map-preloader{
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(240, 240, 240, 0.5) !important;
+    backdrop-filter: blur(6px) !important;
+    z-index: 10000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.preloader-container{
+    position: absolute !important;
+    top: 35%;
+    left: 50%;
+
+    transform: translateY(-30%);
+    transform: translateX(-50%);
+}
+
+.preloader-wrapper{
+    width: 200px !important;
+    height: 200px !important;
+}
+
+.preloader-wrapper2{
+    width: 100px !important;
+    height: 100px !important;    
 }
 
 .col-map{
@@ -708,5 +777,22 @@ header, main, footer {
     header, main, footer {
       padding-left: 0;
     }
+}
+
+/* PERSONALIZANDO LA BARRA DE DESPLAZAMIENTO */
+
+#slide-out::-webkit-scrollbar {
+    width: 5px;
+    height: 2px;
+}
+
+#slide-out::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0px;
+}
+
+#slide-out::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 

@@ -1,4 +1,53 @@
 
+    DataGuanajuatoEmpty = [
+        {id:"11001", COUNTYID:"001", COUNTY:"Abasolo",                                           STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11002", COUNTYID:"002", COUNTY:"Acámbaro",                                          STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11003", COUNTYID:"003", COUNTY:"San Miguel de Allende",                             STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"34.96", },
+        {id:"11005", COUNTYID:"005", COUNTY:"Apaseo el Grande",                                  STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11004", COUNTYID:"004", COUNTY:"Apaseo el Alto",                                    STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11006", COUNTYID:"006", COUNTY:"Atarjea",                                           STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11007", COUNTYID:"007", COUNTY:"Celaya",                                            STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11008", COUNTYID:"008", COUNTY:"Manuel Doblado",                                    STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11009", COUNTYID:"009", COUNTY:"Comonfort",                                         STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11010", COUNTYID:"010", COUNTY:"Coroneo",                                           STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11011", COUNTYID:"011", COUNTY:"Cortazar",                                          STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11012", COUNTYID:"012", COUNTY:"Cuerámaro",                                         STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11013", COUNTYID:"013", COUNTY:"Doctor Mora",                                       STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11014", COUNTYID:"014", COUNTY:"Dolores Hidalgo Cuna de la Independencia Nacional", STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"35.68", },
+        {id:"11015", COUNTYID:"015", COUNTY:"Guanajuato",                                        STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11016", COUNTYID:"016", COUNTY:"Huanímaro",                                         STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11017", COUNTYID:"017", COUNTY:"Irapuato",                                          STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11018", COUNTYID:"018", COUNTY:"Jaral del Progreso",                                STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11019", COUNTYID:"019", COUNTY:"Jerécuaro",                                         STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11020", COUNTYID:"020", COUNTY:"León",                                              STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11021", COUNTYID:"021", COUNTY:"Moroleón",                                          STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11022", COUNTYID:"022", COUNTY:"Ocampo",                                            STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"35.58", },
+        {id:"11023", COUNTYID:"023", COUNTY:"Pénjamo",                                           STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11024", COUNTYID:"024", COUNTY:"Pueblo Nuevo",                                      STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11025", COUNTYID:"025", COUNTY:"Purí­sima del Rincón",                               STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11026", COUNTYID:"026", COUNTY:"Romita",                                            STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11027", COUNTYID:"027", COUNTY:"Salamanca",                                         STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11028", COUNTYID:"028", COUNTY:"Salvatierra",                                       STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11029", COUNTYID:"029", COUNTY:"San Diego de la Unión",                             STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"37.12", },
+        {id:"11030", COUNTYID:"030", COUNTY:"San Felipe",                                        STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"34.77", },
+        {id:"11031", COUNTYID:"031", COUNTY:"San Francisco del Rincón",                          STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11032", COUNTYID:"032", COUNTY:"San José Iturbide",                                 STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11033", COUNTYID:"033", COUNTY:"San Luis de la Paz",                                STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11034", COUNTYID:"034", COUNTY:"Santa Catarina",                                    STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11035", COUNTYID:"035", COUNTY:"Santa Cruz de Juventino Rosas",                     STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11036", COUNTYID:"036", COUNTY:"Santiago Maravatí­o",                                STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11037", COUNTYID:"037", COUNTY:"Silao de la Victoria",                              STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11038", COUNTYID:"038", COUNTY:"Tarandacuao",                                       STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11039", COUNTYID:"039", COUNTY:"Tarimoro",                                          STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11040", COUNTYID:"040", COUNTY:"Tierra Blanca",                                     STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11041", COUNTYID:"041", COUNTY:"Uriangato",                                         STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11042", COUNTYID:"042", COUNTY:"Valle de Santiago",                                 STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11043", COUNTYID:"043", COUNTY:"Victoria",                                          STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11044", COUNTYID:"044", COUNTY:"Villagrán",                                         STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11045", COUNTYID:"045", COUNTY:"Xichú",                                             STATEID:"11", STATE:"Guanajuato", CNTRY:"Peru",   RIMA_TELESEC_ESP_1ro_R1:"00.00", },
+        {id:"11046", COUNTYID:"046", COUNTY:"Yuriria",                                           STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico", RIMA_TELESEC_ESP_1ro_R1:"00.00", } 
+    ]
+
     DataGuanajuatoState  = [
         {id:"11001", COUNTYID:"001", COUNTY:"Abasolo",                                           STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico" },
         {id:"11002", COUNTYID:"002", COUNTY:"Acámbaro",                                          STATEID:"11", STATE:"Guanajuato", CNTRY:"Mexico" },
@@ -105,7 +154,9 @@
         }]
     }
 
-    var server_dir = "https://script.google.com/macros/s/AKfycbxA91vlseiaEC7fJfHXmKPTS9aQHutPBdx8EAdkVAztsN1cuQad2hZQbi9GK7skYJ_kPw/exec";
+    //var server_dir = 'https://script.google.com/macros/s/AKfycbwZvyZo0qcaxvSC1S8qhrOjuU9X0lLU9wJye2W-NKDz0gGHY3ShVeRyQCH35ZSQlqBe/exec';
+    var server_dir = 'https://script.google.com/macros/s/AKfycbz48-iFT3ZGmtB6n815pH5qZ81WN47hV2P8axyWkfvC_hYP4q1RRRZh1wAWY3_FDtgY/exec';
+
     //  GENERACIÓN AUTOMÁTICA DE CATEGORÍAS
     function Object2Vector(ObjectPropertie){
         var vector = [];
@@ -446,7 +497,7 @@
         return SeriesChart;
     }
     //  OBTENIENDO LA INFORMACIÓN DEL MAPA
-    function getMapData(){
+    function getDataCities(){
 
         var MapData = [
                 AbasoloValue = $('#txtAbasoloValue').val(),
@@ -500,6 +551,55 @@
         return MapData;
     }
 
+    function setDataCities(DatosMunicipios){
+        $('#txtAbasoloValue').val(          DatosMunicipios[ 0] );
+        $('#txtAcambaroValue').val(         DatosMunicipios[ 1] );
+        $('#txtSanMiguelValue').val(        DatosMunicipios[ 2] );
+        $('#txtApaseoElAltoValue').val(     DatosMunicipios[ 3] );
+        $('#txtApaseoElGrandeValue').val(   DatosMunicipios[ 4] );
+        $('#txtAtarjeaValue').val(          DatosMunicipios[ 5] );
+        $('#txtCelayaValue').val(           DatosMunicipios[ 6] );
+        $('#txtManuelDobladoValue').val(    DatosMunicipios[ 7] );
+        $('#txtComonfortValue').val(        DatosMunicipios[ 8] );
+        $('#txtCoroneoValue').val(          DatosMunicipios[ 9] );
+        $('#txtCortazarValue').val(         DatosMunicipios[10] );
+        $('#txtCueramaroValue').val(        DatosMunicipios[11] );
+        $('#txtDoctorMoraValue').val(       DatosMunicipios[12] );
+        $('#txtDoloresHidalgoValue').val(   DatosMunicipios[13] );
+        $('#txtGuanajuatoValue').val(       DatosMunicipios[14] );
+        $('#txtHuanimaroValue').val(        DatosMunicipios[15] );
+        $('#txtIrapuatoValue').val(         DatosMunicipios[16] );
+        $('#txtJaralDelProgesoValue').val(  DatosMunicipios[17] );
+        $('#txtJerecuaroValue').val(        DatosMunicipios[18] );
+        $('#txtLeonValue').val(             DatosMunicipios[19] );
+        $('#txtMoroleonValue').val(         DatosMunicipios[20] );
+        $('#txtOcampoValue').val(           DatosMunicipios[21] );
+        $('#txtPenjamoValue').val(          DatosMunicipios[22] );
+        $('#txtPuebloNuevoValue').val(      DatosMunicipios[23] );
+        $('#txtPurisimaDelRinconValue').val(DatosMunicipios[24] );
+        $('#txtRomitaValue').val(           DatosMunicipios[25] );
+        $('#txtSalamancaValue').val(        DatosMunicipios[26] );
+        $('#txtSalvatierraValue').val(      DatosMunicipios[27] );
+        $('#txtSanDiegoDeLaUnionValue').val(DatosMunicipios[28] );
+        $('#txtSanFelipeValue').val(        DatosMunicipios[29] );
+        $('#txtSanFranciscoDelRinconValue').val(DatosMunicipios[30] );
+        $('#txtSanJoseIturbideValue').val(  DatosMunicipios[31] );
+        $('#txtSanLuisDeLaPazValue').val(   DatosMunicipios[32] );
+        $('#txtSantaCatarinaValue').val(    DatosMunicipios[33] );
+        $('#txtSantaCruzDeJuventinoRosasValue').val(DatosMunicipios[34] );
+        $('#txtSantiagoMaravatíoValue').val(DatosMunicipios[35] );
+        $('#txtSilaoValue').val(            DatosMunicipios[36] );
+        $('#txtTarandacuaoValue').val(      DatosMunicipios[37] );
+        $('#txtTarimoroValue').val(         DatosMunicipios[38] );
+        $('#txtTierraBlancaValue').val(     DatosMunicipios[39] );
+        $('#txtUriangatoValue').val(        DatosMunicipios[40] );
+        $('#txtValleDeSantiagoValue').val(  DatosMunicipios[41] );
+        $('#txtVictoriaValue').val(         DatosMunicipios[42] );
+        $('#txtVillagranValue').val(        DatosMunicipios[43] );
+        $('#txtXichuValue').val(            DatosMunicipios[44] );
+        $('#txtYuririaValue').val(          DatosMunicipios[45] );
+    }
+
     function getMapColor(){
         var selected_color = $('input:radio[name=group1]:checked').val();
         var CategoriesColor;
@@ -542,6 +642,11 @@
         return CategoriesColor;
     }
 
+    function setMapColor(MapColor){
+        var name_selector = '.rbtn-'+MapColor;
+        $(name_selector).prop('checked', true);
+    }
+
     function getNameCategories(){
         var CategoriesName = {
             Category1: $('#txtCategory1').val(),
@@ -553,6 +658,13 @@
         return CategoriesName;
     }
 
+    function setNameCategories(NameCategories){
+        $('#txtCategory1').val( NameCategories.Category1_Name );
+        $('#txtCategory2').val( NameCategories.Category2_Name );
+        $('#txtCategory3').val( NameCategories.Category3_Name );
+        $('#txtCategory4').val( NameCategories.Category4_Name );
+    }
+
     function getCategoriesValues(){
         var Categories = {
             Category1: {Min: $('#txtCategory1_Min').val(), Max: $('#txtCategory1_Max').val()},
@@ -562,6 +674,18 @@
         }
 
         return Categories;
+    }
+
+    function setCategoriesValues(CategoriesValues){
+        $('#txtCategory1_Min').val( CategoriesValues.Category1.Min );
+        $('#txtCategory1_Max').val( CategoriesValues.Category1.Max );
+        $('#txtCategory2_Min').val( CategoriesValues.Category2.Min );
+        $('#txtCategory2_Max').val( CategoriesValues.Category2.Max );
+        $('#txtCategory3_Min').val( CategoriesValues.Category3.Min );
+        $('#txtCategory3_Max').val( CategoriesValues.Category3.Max );
+        $('#txtCategory4_Min').val( CategoriesValues.Category4.Min );
+        $('#txtCategory4_Max').val( CategoriesValues.Category4.Max );
+
     }
 
     function getLabelsColorByCategory(){
@@ -587,7 +711,19 @@
         return LabelsColor;
     }
 
-    function ChangeTitleCategoriesByLimits(){
+    function setLabelsColorByCategory(LabelsColor){
+        if( LabelsColor.LabelsCategory1 == 'black' ) lblColor1 = true; else lblColor1 = false;
+        if( LabelsColor.LabelsCategory2 == 'black' ) lblColor2 = true; else lblColor2 = false;
+        if( LabelsColor.LabelsCategory3 == 'black' ) lblColor3 = true; else lblColor3 = false;
+        if( LabelsColor.LabelsCategory4 == 'black' ) lblColor4 = true; else lblColor4 = false;
+
+        $('input:checkbox[name=switch-cat-1]').prop('checked', lblColor1);
+        $('input:checkbox[name=switch-cat-2]').prop('checked', lblColor2);
+        $('input:checkbox[name=switch-cat-3]').prop('checked', lblColor3);
+        $('input:checkbox[name=switch-cat-4]').prop('checked', lblColor4);
+    }
+
+    function getChangeTitleCategoriesByLimits(){
         var checked = $('#checkbox-title-ranges').prop('checked');
         var usePorcentage = $('#checkbox-title-porcentage').prop('checked');
         var CatValues = getCategoriesValues();
@@ -633,6 +769,48 @@
             $('#txtCategory4').attr('disabled', false);
             
         }
+    }
+
+    function setTitleCategoriesByLimits(ChangeTitleCategories){
+        if(  ChangeTitleCategories.RangeTitle )
+            $('#checkbox-title-ranges').prop('checked', true);
+        else
+            $('#checkbox-title-ranges').prop('checked', false);
+
+        if(  ChangeTitleCategories.RangePorcentage )
+            $('#checkbox-title-porcentage').prop('checked', true);
+        else
+            $('#checkbox-title-porcentage').prop('checked', false);
+    }
+
+    function getTitleMap(){
+        var checked = $('#checkboxTextBold').prop('checked');
+        var checked = $('#checkboxTextItalic').prop('checked');
+        
+        $('.map-title').text( $('#txt-title').val() );
+        $('.map-title').css('font-size', $('#txt-size-text').val(), 'important');
+
+        if( checked )
+            $('.map-title').css('font-weight', 'bold');
+        else
+            $('.map-title').css('font-weight', 'normal');
+
+        if( checked )
+            $('.map-title').css('font-style', 'italic');
+        else
+            $('.map-title').css('font-style', 'normal');
+    }
+
+    function setTitleMap(DataTitle){
+        var FontBold, FontItalic;
+
+        if( DataTitle.FontBold == 'true' ) FontBold = true; else FontBold = false;
+        if( DataTitle.FontItalic == 'true' ) FontItalic = true; else FontItalic = false;
+
+        $('#txt-title').val( DataTitle.TitleMap );
+        $('#txt-size-text').val( DataTitle.FontSize );
+        $('#checkboxTextBold').prop('checked', FontBold );
+        $('#checkboxTextItalic').prop('checked', FontItalic);
     }
 
     // CREATING MAPS
@@ -718,15 +896,16 @@
     }
 
     function UpdateAndShowMap(){
-        ChangeTitleCategoriesByLimits();
+        getChangeTitleCategoriesByLimits();
 
-        var MapData = getMapData();
+        var MapData = getDataCities();
         var MapColor = getMapColor();
         var CategoriesName = getNameCategories();
         var CategoriesValues = getCategoriesValues();
         var LabelsColor = getLabelsColorByCategory();
 
         CreateMap(MapData, MapColor, CategoriesName, CategoriesValues, LabelsColor);
+        getTitleMap();
     }
 
     function EmptyMap(){
@@ -768,7 +947,6 @@
                 if( polygon ){
                     var label = labelSeries.mapImages.create();
                     var state = polygon.dataItem.dataContext.COUNTY;
-                    console.log( state );
 
                     if( state == 'San Diego de la Unión' ){
                         name_state = 'San Diego \n de la Unión';
@@ -811,39 +989,98 @@
             }
         });
 
-        chart.legend = new am4maps.Legend();
-        chart.legend.position = "right";
-        chart.legend.align = "right";
-        chart.legend.valign = "middle";
-        chart.legend.data = [{
-            "name": "2016",
-            "fill":"#72A6B2"
-            }, {
-            "name": "2017",
-            "fill": "#667E93"
-            }, {
-            "name": "2018",
-            "fill": "#488BB2"
-            }];
-
-        var marker = chart.legend.markers.template.children.getIndex(0);
-        marker.cornerRadius(12, 12, 12, 12);
-        marker.strokeWidth = 2;
-        marker.strokeOpacity = 0.6;
-        marker.stroke = am4core.color("rgba(200, 200, 200, 0.1)");
-
-        $('.title-map').text('Mapas estadísticos');
+        $('.title-map').text('Mapa de muestra');
     }
 
-    function Get_AllProjectsName(){
-        console.log('Mostrando proyectos => ');
+    function getDataFromServer(){
+        console.log('Mostrando resultados => ');
     
-        $.post(server_dir, {TypeFunction: "AllProjectsName"}, function(DataResults){
-            console.log( DataResults );            
+        $.post(server_dir, {TypeFunction: "AllMapsNames"}, function(DataResults){
+            console.log( DataResults );
+            var names = DataResults.NameMaps[0];
+            var options = "";
+
+            for(var i=1; i<names.length; i++){
+                options = options + "<option value='"+i+"'>"+names[i]+"</option>";
+            }
+
+            $('#select-maps').empty();
+            $('#select-maps').append( options );
+            $('select').formSelect();
+
+            var NameCategories = {
+                Category1_Name: DataResults.DatosMapa.Category1_Name,
+                Category2_Name: DataResults.DatosMapa.Category2_Name,
+                Category3_Name: DataResults.DatosMapa.Category3_Name,
+                Category4_Name: DataResults.DatosMapa.Category4_Name
+            };
+
+            var CategoriesValues = {
+                Category1: {
+                    Min: DataResults.DatosMapa.Category1_Min,
+                    Max: DataResults.DatosMapa.Category1_Max
+                },
+                Category2: {
+                    Min: DataResults.DatosMapa.Category2_Min,
+                    Max: DataResults.DatosMapa.Category2_Max
+                },
+                Category3: {
+                    Min: DataResults.DatosMapa.Category3_Min,
+                    Max: DataResults.DatosMapa.Category3_Max
+                },
+                Category4: {
+                    Min: DataResults.DatosMapa.Category4_Min,
+                    Max: DataResults.DatosMapa.Category4_Max
+                }
+            }
+
+            var LabelsColor = {
+                LabelsCategory1: DataResults.DatosMapa.Category1_LabelsColor,
+                LabelsCategory2: DataResults.DatosMapa.Category2_LabelsColor,
+                LabelsCategory3: DataResults.DatosMapa.Category3_LabelsColor,
+                LabelsCategory4: DataResults.DatosMapa.Category4_LabelsColor,
+            }
+
+            var ChangeTitleCategories = {
+                RangeTitle: DataResults.DatosMapa.RangeTitle,
+                RangePorcentage: DataResults.DatosMapa.RangePorcentage
+            }
+
+            var DataTitle = {
+                TitleMap: DataResults.DatosMapa.TitleMap,
+                FontSize: DataResults.DatosMapa.FontSize,
+                FontBold: DataResults.DatosMapa.FontBold,
+                FontItalic: DataResults.DatosMapa.FontItalic
+            }
+
+            setDataCities             ( DataResults.DatosMunicipio            );
+            setMapColor               ( DataResults.DatosMapa.ColorScheme     );
+            setNameCategories         ( NameCategories                        );
+            setCategoriesValues       ( CategoriesValues                      );
+            setLabelsColorByCategory  ( LabelsColor                           );
+            setTitleCategoriesByLimits( ChangeTitleCategories                 );
+            setTitleMap               ( DataTitle                             );
+
+            UpdateAndShowMap();
+
+            //$('.card-map-preloader').show();
+            //$('.sidenav-options-preloader').show();
         }).done(function(){
-            console.log(' Correcto ');
-        }).fail(function() {
-            console.log(' Error ');
+            $('.loader-container-table').fadeOut(200);
+            $('#findByParameter').prop('disabled', '');
+            $('.card-map-preloader').fadeOut(); 
+            $('.sidenav-options-preloader').fadeOut();
+
+            $('.fixed-action-btn').fadeIn();
+        }).fail(function(error_srv) {
+            console.log( error_srv );
+
+            $('.loader-container-table').fadeOut(200);
+            $('#findByParameter').prop('disabled', '');
+
+            $('.card-map-preloader').fadeOut(); 
+            $('.sidenav-options-preloader').fadeOut();
+            EmptyMap();
         });
     }
 
@@ -851,10 +1088,13 @@
         $('.sidenav').sidenav();
         $('.collapsible').collapsible();
         $('.tooltipped').tooltip();
+        $('.fixed-action-btn').floatingActionButton({
+            hoverEnabled: false
+        });
+
         $('input:radio[name=group1]').prop('checked', 'checked');
 
-        UpdateAndShowMap();
-        Get_AllProjectsName();
+        getDataFromServer();
     });
 
     $('.btnConvert2Image').on('click', function(){

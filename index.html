@@ -22,20 +22,27 @@
 
                 <a href="#user"><img class="seg-logo" src="Resource/images/seg-logo.jpeg"></a>
                 <a href="#name"><span class="white-text name">Dirección General de Política Educativa (DGPE)</span></a>
-                <a href="#email"><span class="white-text">Generador de Mapas Estadísticos</span></a>
+                <a href="#email"><span class="white-text"><h6>Mapas disponibles</h6></span></a>
+          
+                <div class="row mb-0">
+                  <div class="input-field col l12 col-p0">
+                    <select id="select-maps" class="browser-default">
+                    </select>
+                  </div>
+                </div>
             </div>
+
+            <!--<a class="btn-floating btn-large teal lighten-2 waves-effect btn-create-new-map tooltipped" data-position="bottom" data-tooltip="Crear nuevo mapa"><i class="material-icons add-icon">add</i></a>-->
         </li>
 
-        <!-- SELECTOR DE MAPAS -->
+        <!-- SELECTOR DE MAPAS
         <li class="no-padding" >
           <li class="select-maps">
             <h6>Mapas disponibles</h6>
           
             <div class="row mb-0">
-              <div class="col l10">
-                <select class="browser-default">
-                  <option value="1">Título de mapa</option>
-                  <option value="2">Título de mapa (1)</option>
+              <div class="input-field col l10">
+                <select id="select-maps" class="browser-default">
                 </select>
               </div>
               <div class="col l2">
@@ -45,6 +52,7 @@
 
           </li>
         </li>
+         -->
 
         <!-- DATOS POR MUNICIPIO -->
         <li class="no-padding menu-map-option">
@@ -74,13 +82,33 @@
           </li>
         </li>
 
+        <div class="sidenav-options-preloader">
+          <div class="preloader-container">
+                        
+            <div class="preloader-wrapper preloader-wrapper2 big active">
+              <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                  <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         <!-- GUARDAR MAPA -->
-        <a class="btn-small waves-effect light-blue darken-1 btn-save-map" ><i class="material-icons left white-color">cloud_upload</i>Guardar mapa</a>
+        <!--<a class="btn-small waves-effect light-blue darken-1 btn-save-map" ><i class="material-icons left white-color">cloud_upload</i>Guardar mapa</a>-->
     </ul>
 
     <ul id="slide-out" class="sidenav">
 
-      <a class="sidenav-close btn-small btn-floating btn-close-sidenav waves-effect red" href="#!"> <i class="material-icons left icon-close-sidenav">chevron_left</i> </a>
+      <a class="sidenav-close btn-large btn-floating btn-close-sidenav waves-effect red" href="#!"> <i class="material-icons left icon-close-sidenav">close</i> </a>
 
       <ul class="collection with-header collection-data">
 
@@ -455,7 +483,7 @@
             </div>
           </div>
       </li>
-
+      
       <li class="collection-item collection-item-title-format">
           <div class="italic-text-title">
             <div> <i class="material-icons left">format_italic</i>Texto en cursiva </div>
@@ -477,7 +505,7 @@
             <form id="RadioButtons_CategoriesColor" action="#">
               <p class="radio-button-container">
                 <label>
-                  <input class="with-gap" name="group1" type="radio" value="blue-gray" />
+                  <input class="with-gap rbtn-blue-gray" name="group1" type="radio" value="blue-gray" />
                   <span>
                     <i class="material-icons prefix blue-gray-color-category1">label</i>
                     <i class="material-icons prefix blue-gray-color-category2">label</i>
@@ -491,7 +519,7 @@
               </p>
               <p class="radio-button-container">
                 <label>
-                  <input class="with-gap" name="group1" type="radio" value="brown" />
+                  <input class="with-gap rbtn-brown" name="group1" type="radio" value="brown" />
                   <span>
                     <i class="material-icons prefix brown-color-category1">label</i>
                     <i class="material-icons prefix brown-color-category2">label</i>
@@ -505,7 +533,7 @@
               </p>
               <p class="radio-button-container">
                 <label>
-                  <input class="with-gap" name="group1" type="radio" value="green" />
+                  <input class="with-gap rbtn-green" name="group1" type="radio" value="green" />
                   <span>
                     <i class="material-icons prefix green-color-category1">label</i>
                     <i class="material-icons prefix green-color-category2">label</i>
@@ -519,7 +547,7 @@
               </p>
               <p class="radio-button-container">
                 <label>
-                  <input class="with-gap" name="group1" type="radio" value="teal" />
+                  <input class="with-gap rbtn-teal" name="group1" type="radio" value="teal" />
                   <span>
                     <i class="material-icons prefix teal-color-category1">label</i>
                     <i class="material-icons prefix teal-color-category2">label</i>
@@ -533,7 +561,7 @@
               </p>
               <p class="radio-button-container">
                 <label>
-                  <input class="with-gap" name="group1" type="radio" value="cyan" />
+                  <input class="with-gap rbtn-cyan" name="group1" type="radio" value="cyan" />
                   <span>
                     <i class="material-icons prefix cyan-color-category1">label</i>
                     <i class="material-icons prefix cyan-color-category2">label</i>
@@ -547,7 +575,7 @@
               </p>
               <p class="radio-button-container">
                 <label>
-                  <input class="with-gap" name="group1" type="radio" value="blue" />
+                  <input class="with-gapr btn-blue" name="group1" type="radio" value="blue" />
                   <span>
                     <i class="material-icons prefix blue-color-category1">label</i>
                     <i class="material-icons prefix blue-color-category2">label</i>
@@ -561,7 +589,7 @@
               </p>
               <p class="radio-button-container">
                 <label>
-                  <input class="with-gap" name="group1" type="radio" value="indigo" />
+                  <input class="with-gap rbtn-indigo" name="group1" type="radio" value="indigo" />
                   <span>
                     <i class="material-icons prefix indigo-color-category1">label</i>
                     <i class="material-icons prefix indigo-color-category2">label</i>
@@ -575,7 +603,7 @@
               </p>
               <p class="radio-button-container">
                 <label>
-                  <input class="with-gap" name="group1" type="radio" value="purple" />
+                  <input class="with-gap rbtn-purple" name="group1" type="radio" value="purple" />
                   <span>
                     <i class="material-icons prefix purple-color-category1">label</i>
                     <i class="material-icons prefix purple-color-category2">label</i>
@@ -792,18 +820,51 @@
 
     <div class="main-container">
         <!-- GUARDAR MAPA COMO IMAGEN -->
-        <a class="btn-floating btn-large blue-grey darken-1 waves-effect btnConvert2Image tooltipped" data-position="bottom" data-tooltip="Descargar mapa como imagen"><i class="material-icons white-color">archive</i></a>
+        <!--<a class="btn-floating btn-large blue-grey darken-1 waves-effect btnConvert2Image tooltipped" data-position="bottom" data-tooltip="Descargar mapa como imagen"><i class="material-icons white-color">archive</i></a>-->
 
-        <div class="row ">
+        <div class="row">
             <div class="col l7 m7 col-map">
                 <div class="card card-map">
                     <div class="card-content card-map-content">
                         <span class="card-title map-title center-align">Título del mapa de ejemplo</span>
-                        <div id="mapa_guanajuato"><div>   
+                        <div id="mapa_guanajuato"></div>   
                     </div>
-                </div>     
+                    <div class="card card-map-preloader">
+                      <div class="preloader-container">
+                        
+                        <div class="preloader-wrapper big active">
+                          <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                              <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                              <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                              <div class="circle"></div>
+                            </div>
+                          </div>
+                        </div>
+    
+                      </div>
+                    </div>
+                </div>    
+
+
+
             </div>
-        </div>
+         </div>
+    </div>
+
+    <div class="fixed-action-btn direction-bottom">
+      <a class="btn-floating waves-effect btn-large btn-create-new-map red">
+        <i class="large material-icons">settings</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating waves-effect blue-grey darken-1 tooltipped btnConvert2Image"    data-position="right" data-tooltip="Descargar mapa como imagen"> <i class="material-icons">file_download</i></a></li>
+        <li><a class="btn-floating waves-effect light-blue darken-1 tooltipped"  data-position="right" data-tooltip="Guardar datos del mapa">     <i class="material-icons">cloud_upload</i></a></li>
+        <li><a class="btn-floating waves-effect blue darken-2 tooltipped "        data-position="right" data-tooltip="Crear nuevo mapa">           <i class="material-icons">add</i></a></li>
+      </ul>
     </div>
     
     <!-- Convertit HTML A IMAGEN -->
