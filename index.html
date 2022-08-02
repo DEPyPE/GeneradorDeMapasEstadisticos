@@ -575,7 +575,7 @@
               </p>
               <p class="radio-button-container">
                 <label>
-                  <input class="with-gapr btn-blue" name="group1" type="radio" value="blue" />
+                  <input class="with-gapr rbtn-blue" name="group1" type="radio" value="blue" />
                   <span>
                     <i class="material-icons prefix blue-color-category1">label</i>
                     <i class="material-icons prefix blue-color-category2">label</i>
@@ -862,9 +862,25 @@
       </a>
       <ul>
         <li><a class="btn-floating waves-effect blue-grey darken-1 tooltipped btnConvert2Image"    data-position="right" data-tooltip="Descargar mapa como imagen"> <i class="material-icons">file_download</i></a></li>
-        <li><a class="btn-floating waves-effect light-blue darken-1 tooltipped"  data-position="right" data-tooltip="Guardar datos del mapa">     <i class="material-icons">cloud_upload</i></a></li>
-        <li><a class="btn-floating waves-effect blue darken-2 tooltipped "        data-position="right" data-tooltip="Crear nuevo mapa">           <i class="material-icons">add</i></a></li>
+        <li><a class="btn-floating waves-effect light-blue darken-1 tooltipped btn-save-map-data"  data-position="right" data-tooltip="Guardar datos del mapa">     <i class="material-icons">save</i></a></li>
+        <li><a class="btn-floating waves-effect blue darken-2 modal-trigger tooltipped" href="#AddNewMap" data-position="right" data-tooltip="Crear nuevo mapa">           <i class="material-icons">add</i></a></li>
       </ul>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="AddNewMap" class="modal">
+      <div class="modal-content">
+        <h4>Nuevo mapa</h4>
+        <div class="row">
+          <div class="input-field col l12">
+            <input placeholder="Nombre del mapa" id="txtNameNewMap" type="text" class="validate">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="btn waves-effect blue btn darken-2 btn-add-new-map">Crear mapa</a>
+        <a href="#!" class="btn waves-effect btn-flat btn-add-new-map">Cerrar</a>
+      </div>
     </div>
     
     <!-- Convertit HTML A IMAGEN -->

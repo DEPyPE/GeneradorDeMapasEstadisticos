@@ -496,6 +496,7 @@
 
         return SeriesChart;
     }
+
     //  OBTENIENDO LA INFORMACIÓN DEL MAPA
     function getDataCities(){
 
@@ -551,6 +552,165 @@
         return MapData;
     }
 
+    function getMapColor(){
+        var selected_color = $('input:radio[name=group1]:checked').val();
+        var CategoriesColor;
+
+        if( selected_color == "blue-gray" ){
+            CategoriesColor = ColorPalette.Blue_Grey;
+        }else if( selected_color == "brown" ){
+            CategoriesColor = ColorPalette.Brown;
+        }else if( selected_color == "green" ){
+            CategoriesColor = ColorPalette.Green;
+        }else if( selected_color == "teal" ){
+            CategoriesColor = ColorPalette.Teal;
+        }else if( selected_color == "cyan" ){
+            CategoriesColor = ColorPalette.Cyan;
+        }else if( selected_color == "blue" ){
+            CategoriesColor = ColorPalette.Blue;
+        }else if( selected_color == "indigo" ){
+            CategoriesColor = ColorPalette.Indigo;
+        }else if( selected_color == "purple" ){
+            CategoriesColor = ColorPalette.Purple;
+        }
+
+        $('.color-category1').css({
+            'background-color': CategoriesColor[0].Range1
+        });
+
+        $('.color-category2').css({
+            'background-color': CategoriesColor[0].Range2
+        });
+
+        $('.color-category3').css({
+            'background-color': CategoriesColor[0].Range3
+        });
+
+        $('.color-category4').css({
+            'background-color': CategoriesColor[0].Range4
+        });
+
+        var ColorScheme = {
+            Name: selected_color,
+            Palette: CategoriesColor
+        }
+
+        return ColorScheme;
+    }
+
+    function getNameCategories(){
+        var CategoriesName = {
+            Category1: $('#txtCategory1').val(),
+            Category2: $('#txtCategory2').val(),
+            Category3: $('#txtCategory3').val(),
+            Category4: $('#txtCategory4').val(),
+        }
+
+        return CategoriesName;
+    }
+
+    function getCategoriesValues(){
+        var Categories = {
+            Category1: {Min: $('#txtCategory1_Min').val(), Max: $('#txtCategory1_Max').val()},
+            Category2: {Min: $('#txtCategory2_Min').val(), Max: $('#txtCategory2_Max').val()},
+            Category3: {Min: $('#txtCategory3_Min').val(), Max: $('#txtCategory3_Max').val()},
+            Category4: {Min: $('#txtCategory4_Min').val(), Max: $('#txtCategory4_Max').val()}
+        }
+
+        return Categories;
+    }
+
+    function getLabelsColorByCategory(){
+        var switch1 = $('input:checkbox[name=switch-cat-1]').prop('checked');
+        var switch2 = $('input:checkbox[name=switch-cat-2]').prop('checked');
+        var switch3 = $('input:checkbox[name=switch-cat-3]').prop('checked');
+        var switch4 = $('input:checkbox[name=switch-cat-4]').prop('checked');
+        var lblColor1, lblColor2, lblColor3, lblColor4;
+
+        if( switch1 ) lblColor1 = 'black'; else lblColor1 = 'white';
+        if( switch2 ) lblColor2 = 'black'; else lblColor2 = 'white';
+        if( switch3 ) lblColor3 = 'black'; else lblColor3 = 'white';
+        if( switch4 ) lblColor4 = 'black'; else lblColor4 = 'white';
+            
+
+        LabelsColor = {
+            LabelsCategory1: lblColor1,
+            LabelsCategory2: lblColor2,
+            LabelsCategory3: lblColor3,
+            LabelsCategory4: lblColor4,
+        }
+
+        return LabelsColor;
+    }
+
+    function getChangeTitleCategoriesByLimits(){
+        var useTitleRanges = $('#checkbox-title-ranges').prop('checked');
+        var usePorcentage = $('#checkbox-title-porcentage').prop('checked');
+        var CatValues = getCategoriesValues();
+        var symbolPorcentage;
+
+        if( usePorcentage ){
+            symbolPorcentage = ' %';
+        }else{
+            symbolPorcentage = '';
+        }
+
+        if( useTitleRanges ){
+            $('#txtCategory1').val( CatValues.Category1.Min + symbolPorcentage + " - " + CatValues.Category1.Max + symbolPorcentage );
+            $('#txtCategory2').val( CatValues.Category2.Min + symbolPorcentage + " - " + CatValues.Category2.Max + symbolPorcentage );
+            $('#txtCategory3').val( CatValues.Category3.Min + symbolPorcentage + " - " + CatValues.Category3.Max + symbolPorcentage );
+            $('#txtCategory4').val( CatValues.Category4.Min + symbolPorcentage + " - " + CatValues.Category4.Max + symbolPorcentage );
+
+            $('#txtCategory1').attr('disabled', true);
+            $('#txtCategory2').attr('disabled', true);
+            $('#txtCategory3').attr('disabled', true);
+            $('#txtCategory4').attr('disabled', true);
+
+            $('#checkbox-title-porcentage').prop('disabled', false);
+        }else{
+            $('#txtCategory1').attr('disabled', false);            
+            $('#txtCategory2').attr('disabled', false);
+            $('#txtCategory3').attr('disabled', false);
+            $('#txtCategory4').attr('disabled', false);
+            $('#checkbox-title-porcentage').prop('disabled', true);
+        }
+
+        titleByLimits = {
+            RangeTitle: useTitleRanges,
+            RangePorcentage: usePorcentage
+        }
+
+        return titleByLimits;
+    }
+
+    function getTitleMap(){
+        var checked_weight = $('#checkboxTextBold').prop('checked');
+        var checked_italic = $('#checkboxTextItalic').prop('checked');
+        
+        $('.map-title').text( $('#txt-title').val() );
+        $('.map-title').css('font-size', $('#txt-size-text').val(), '!important');
+
+        if( checked_weight )
+            $('.map-title').css('font-weight', 'bold');
+        else
+            $('.map-title').css('font-weight', 'normal');
+
+        if( checked_italic )
+            $('.map-title').css('font-style', 'italic');
+        else
+            $('.map-title').css('font-style', 'normal');
+
+        titleFormat = {
+            TitleMap: $('#txt-title').val(),
+            FontSize: $('#txt-size-text').val(),
+            FontBold: checked_weight,
+            FontItalic: checked_italic
+        }
+
+        return titleFormat;
+    }
+
+    //  ACTUALIZANDO LA INFORMACIÓN DE LOS ELEMENTOS HTML
     function setDataCities(DatosMunicipios){
         $('#txtAbasoloValue').val(          DatosMunicipios[ 0] );
         $('#txtAcambaroValue').val(         DatosMunicipios[ 1] );
@@ -600,62 +760,9 @@
         $('#txtYuririaValue').val(          DatosMunicipios[45] );
     }
 
-    function getMapColor(){
-        var selected_color = $('input:radio[name=group1]:checked').val();
-        var CategoriesColor;
-        console.log( selected_color );
-
-        if( selected_color == "blue-gray" ){
-            CategoriesColor = ColorPalette.Blue_Grey;
-        }else if( selected_color == "brown" ){
-            CategoriesColor = ColorPalette.Brown;
-        }else if( selected_color == "green" ){
-            CategoriesColor = ColorPalette.Green;
-        }else if( selected_color == "teal" ){
-            CategoriesColor = ColorPalette.Teal;
-        }else if( selected_color == "cyan" ){
-            CategoriesColor = ColorPalette.Cyan;
-        }else if( selected_color == "blue" ){
-            CategoriesColor = ColorPalette.Blue;
-        }else if( selected_color == "indigo" ){
-            CategoriesColor = ColorPalette.Indigo;
-        }else if( selected_color == "purple" ){
-            CategoriesColor = ColorPalette.Purple;
-        }
-
-        $('.color-category1').css({
-            'background-color': CategoriesColor[0].Range1
-        });
-
-        $('.color-category2').css({
-            'background-color': CategoriesColor[0].Range2
-        });
-
-        $('.color-category3').css({
-            'background-color': CategoriesColor[0].Range3
-        });
-
-        $('.color-category4').css({
-            'background-color': CategoriesColor[0].Range4
-        });
-
-        return CategoriesColor;
-    }
-
     function setMapColor(MapColor){
         var name_selector = '.rbtn-'+MapColor;
         $(name_selector).prop('checked', true);
-    }
-
-    function getNameCategories(){
-        var CategoriesName = {
-            Category1: $('#txtCategory1').val(),
-            Category2: $('#txtCategory2').val(),
-            Category3: $('#txtCategory3').val(),
-            Category4: $('#txtCategory4').val(),
-        }
-
-        return CategoriesName;
     }
 
     function setNameCategories(NameCategories){
@@ -663,17 +770,6 @@
         $('#txtCategory2').val( NameCategories.Category2_Name );
         $('#txtCategory3').val( NameCategories.Category3_Name );
         $('#txtCategory4').val( NameCategories.Category4_Name );
-    }
-
-    function getCategoriesValues(){
-        var Categories = {
-            Category1: {Min: $('#txtCategory1_Min').val(), Max: $('#txtCategory1_Max').val()},
-            Category2: {Min: $('#txtCategory2_Min').val(), Max: $('#txtCategory2_Max').val()},
-            Category3: {Min: $('#txtCategory3_Min').val(), Max: $('#txtCategory3_Max').val()},
-            Category4: {Min: $('#txtCategory4_Min').val(), Max: $('#txtCategory4_Max').val()}
-        }
-
-        return Categories;
     }
 
     function setCategoriesValues(CategoriesValues){
@@ -688,87 +784,21 @@
 
     }
 
-    function getLabelsColorByCategory(){
-        var switch1 = $('input:checkbox[name=switch-cat-1]').prop('checked');
-        var switch2 = $('input:checkbox[name=switch-cat-2]').prop('checked');
-        var switch3 = $('input:checkbox[name=switch-cat-3]').prop('checked');
-        var switch4 = $('input:checkbox[name=switch-cat-4]').prop('checked');
-        var lblColor1, lblColor2, lblColor3, lblColor4;
-
-        if( switch1 ) lblColor1 = 'black'; else lblColor1 = 'white';
-        if( switch2 ) lblColor2 = 'black'; else lblColor2 = 'white';
-        if( switch3 ) lblColor3 = 'black'; else lblColor3 = 'white';
-        if( switch4 ) lblColor4 = 'black'; else lblColor4 = 'white';
-            
-
-        LabelsColor = {
-            LabelsCategory1: lblColor1,
-            LabelsCategory2: lblColor2,
-            LabelsCategory3: lblColor3,
-            LabelsCategory4: lblColor4,
-        }
-
-        return LabelsColor;
-    }
-
     function setLabelsColorByCategory(LabelsColor){
-        if( LabelsColor.LabelsCategory1 == 'black' ) lblColor1 = true; else lblColor1 = false;
-        if( LabelsColor.LabelsCategory2 == 'black' ) lblColor2 = true; else lblColor2 = false;
-        if( LabelsColor.LabelsCategory3 == 'black' ) lblColor3 = true; else lblColor3 = false;
-        if( LabelsColor.LabelsCategory4 == 'black' ) lblColor4 = true; else lblColor4 = false;
+        if( LabelsColor.LabelsCategory1 == 'black' ) lblColor1 = false; else lblColor1 = true;
+        if( LabelsColor.LabelsCategory2 == 'black' ) lblColor2 = false; else lblColor2 = true;
+        if( LabelsColor.LabelsCategory3 == 'black' ) lblColor3 = false; else lblColor3 = true;
+        if( LabelsColor.LabelsCategory4 == 'black' ) lblColor4 = false; else lblColor4 = true;
 
         $('input:checkbox[name=switch-cat-1]').prop('checked', lblColor1);
         $('input:checkbox[name=switch-cat-2]').prop('checked', lblColor2);
         $('input:checkbox[name=switch-cat-3]').prop('checked', lblColor3);
         $('input:checkbox[name=switch-cat-4]').prop('checked', lblColor4);
-    }
 
-    function getChangeTitleCategoriesByLimits(){
-        var checked = $('#checkbox-title-ranges').prop('checked');
-        var usePorcentage = $('#checkbox-title-porcentage').prop('checked');
-        var CatValues = getCategoriesValues();
-        var symbolPorcentage;
-
-        if( usePorcentage ){
-            symbolPorcentage = ' %';
-        }else{
-            symbolPorcentage = '';
-        }
-
-        if( checked ){
-            var lastCatName = {
-                c1: $('#txtCategory1').val(), c2: $('#txtCategory2').val(), c3: $('#txtCategory3').val(), c4: $('#txtCategory4').val(),
-            }
-
-            $('#txtCategory1').val( CatValues.Category1.Min + symbolPorcentage + " - " + CatValues.Category1.Max + symbolPorcentage );
-            $('#txtCategory1').attr('disabled', true);
-
-            $('#txtCategory2').val( CatValues.Category2.Min + symbolPorcentage + " - " + CatValues.Category2.Max + symbolPorcentage );
-            $('#txtCategory2').attr('disabled', true);
-
-            $('#txtCategory3').val( CatValues.Category3.Min + symbolPorcentage + " - " + CatValues.Category3.Max + symbolPorcentage );
-            $('#txtCategory3').attr('disabled', true);
-
-            $('#txtCategory4').val( CatValues.Category4.Min + symbolPorcentage + " - " + CatValues.Category4.Max + symbolPorcentage );
-            $('#txtCategory4').attr('disabled', true);
-
-            localStorage.setItem( 'oldCategoryNames', JSON.stringify(lastCatName) );
-        }else{
-            var oldNames = JSON.parse( localStorage.getItem('oldCategoryNames') );
-
-            $('#txtCategory1').val( oldNames.c1 );
-            $('#txtCategory1').attr('disabled', false);
-            
-            $('#txtCategory2').val( oldNames.c2 );
-            $('#txtCategory2').attr('disabled', false);
-            
-            $('#txtCategory3').val( oldNames.c3 );
-            $('#txtCategory3').attr('disabled', false);
-            
-            $('#txtCategory4').val( oldNames.c4 );
-            $('#txtCategory4').attr('disabled', false);
-            
-        }
+        $('input:checkbox[name=switch-cat-1]').click();
+        $('input:checkbox[name=switch-cat-2]').click();
+        $('input:checkbox[name=switch-cat-3]').click();
+        $('input:checkbox[name=switch-cat-4]').click();
     }
 
     function setTitleCategoriesByLimits(ChangeTitleCategories){
@@ -783,29 +813,11 @@
             $('#checkbox-title-porcentage').prop('checked', false);
     }
 
-    function getTitleMap(){
-        var checked = $('#checkboxTextBold').prop('checked');
-        var checked = $('#checkboxTextItalic').prop('checked');
-        
-        $('.map-title').text( $('#txt-title').val() );
-        $('.map-title').css('font-size', $('#txt-size-text').val(), 'important');
-
-        if( checked )
-            $('.map-title').css('font-weight', 'bold');
-        else
-            $('.map-title').css('font-weight', 'normal');
-
-        if( checked )
-            $('.map-title').css('font-style', 'italic');
-        else
-            $('.map-title').css('font-style', 'normal');
-    }
-
     function setTitleMap(DataTitle){
         var FontBold, FontItalic;
 
-        if( DataTitle.FontBold == 'true' ) FontBold = true; else FontBold = false;
-        if( DataTitle.FontItalic == 'true' ) FontItalic = true; else FontItalic = false;
+        if( DataTitle.FontBold ) FontBold = true; else FontBold = false;
+        if( DataTitle.FontItalic ) FontItalic = true; else FontItalic = false;
 
         $('#txt-title').val( DataTitle.TitleMap );
         $('#txt-size-text').val( DataTitle.FontSize );
@@ -813,7 +825,7 @@
         $('#checkboxTextItalic').prop('checked', FontItalic);
     }
 
-    // CREATING MAPS
+    // CREANDO EL MAPA
     function CreateMap(MapData, MapColor, CategoriesName, CategoriesValues, LabelsColor){
 
 //      Creamos la instancia del mapa
@@ -896,16 +908,15 @@
     }
 
     function UpdateAndShowMap(){
-        getChangeTitleCategoriesByLimits();
-
+        var titleByLimits = getChangeTitleCategoriesByLimits();
         var MapData = getDataCities();
         var MapColor = getMapColor();
         var CategoriesName = getNameCategories();
         var CategoriesValues = getCategoriesValues();
         var LabelsColor = getLabelsColorByCategory();
 
-        CreateMap(MapData, MapColor, CategoriesName, CategoriesValues, LabelsColor);
-        getTitleMap();
+        CreateMap(MapData, MapColor.Palette, CategoriesName, CategoriesValues, LabelsColor);
+        var titleFormat = getTitleMap();
     }
 
     function EmptyMap(){
@@ -996,12 +1007,12 @@
         console.log('Mostrando resultados => ');
     
         $.post(server_dir, {TypeFunction: "AllMapsNames"}, function(DataResults){
-            console.log( DataResults );
             var names = DataResults.NameMaps[0];
             var options = "";
 
-            for(var i=1; i<names.length; i++){
-                options = options + "<option value='"+i+"'>"+names[i]+"</option>";
+            for(var i=0; i<names.length; i++){
+                if( names[i] != '' )
+                    options = options + "<option value='"+names[i]+"'>"+names[i]+"</option>";
             }
 
             $('#select-maps').empty();
@@ -1063,13 +1074,13 @@
 
             UpdateAndShowMap();
 
-            //$('.card-map-preloader').show();
-            //$('.sidenav-options-preloader').show();
+            $('.card-map-preloader').show();
+            $('.sidenav-options-preloader').show();
+            $('.fixed-action-btn').hide();
         }).done(function(){
-            $('.loader-container-table').fadeOut(200);
-            $('#findByParameter').prop('disabled', '');
             $('.card-map-preloader').fadeOut(); 
             $('.sidenav-options-preloader').fadeOut();
+            $('.fixed-action-btn').fadeIn();
 
             $('.fixed-action-btn').fadeIn();
         }).fail(function(error_srv) {
@@ -1084,10 +1095,283 @@
         });
     }
 
+    function setDataServer(){
+        var titleByLimits = getChangeTitleCategoriesByLimits();
+        var MapData = getDataCities();
+        var MapColor = getMapColor();
+        var CategoriesName = getNameCategories();
+        var CategoriesValues = getCategoriesValues();
+        var LabelsColor = getLabelsColorByCategory();
+        var titleFormat = getTitleMap();
+        var namemap = $('#select-maps option:selected').val();
+
+        $.post(server_dir, {TypeFunction: "setDataMap", MapName: namemap, AbasoloValue: MapData[ 0], AcambaroValue: MapData[ 1], SanMiguelValue: MapData[ 2], ApaseoElAltoValue: MapData[ 3], ApaseoElGrandeValue: MapData[ 4], AtarjeaValue: MapData[ 5], CelayaValue: MapData[ 6], ManuelDobladoValue: MapData[ 7], ComonfortValue: MapData[ 8], CoroneoValue: MapData[ 9], CortazarValue: MapData[10], CueramaroValue: MapData[11], DoctorMoraValue: MapData[12], DoloresHidalgoValue: MapData[13], GuanajuatoValue: MapData[14], HuanimaroValue: MapData[15], IrapuatoValue: MapData[16], JaralDelProgesoValue: MapData[17], JerecuaroValue: MapData[18], LeonValue: MapData[19], MoroleonValue: MapData[20], OcampoValue: MapData[21], PenjamoValue: MapData[22], PuebloNuevoValue: MapData[23], PurisimaDelRinconValue: MapData[24], RomitaValue: MapData[25], SalamancaValue: MapData[26], SalvatierraValue: MapData[27], SanDiegoDeLaUnionValue: MapData[28], SanFelipeValue: MapData[29], SanFranciscoDelRinconValue: MapData[30], SanJoseIturbideValue: MapData[31], SanLuisDeLaPazValue: MapData[32], SantaCatarinaValue: MapData[33], JuventinoRosasValue: MapData[34], SantiagoMaravatíoValue: MapData[35], SilaoValue: MapData[36], TarandacuaoValue: MapData[37], TarimoroValue: MapData[38], TierraBlancaValue: MapData[39], UriangatoValue: MapData[40], ValleDeSantiagoValue: MapData[41], VictoriaValue: MapData[42], VillagranValue: MapData[43], XichuValue: MapData[44], YuririaValue: MapData[45], TitleMap: titleFormat.TitleMap, FontSize: titleFormat.FontSize, FontBold: titleFormat.FontBold, FontItalic: titleFormat.FontItalic, ColorScheme: MapColor.Name, RangeTitle: titleByLimits.RangeTitle, RangePorcentage: titleByLimits.RangePorcentage, Category1_Name: CategoriesName.Category1, Category1_Min: CategoriesValues.Category1.Min, Category1_Max: CategoriesValues.Category1.Max, Category1_LabelsColor: LabelsColor.LabelsCategory1, Category2_Name: CategoriesName.Category2, Category2_Min: CategoriesValues.Category2.Min, Category2_Max: CategoriesValues.Category2.Max, Category2_LabelsColor: LabelsColor.LabelsCategory2, Category3_Name: CategoriesName.Category3, Category3_Min: CategoriesValues.Category3.Min, Category3_Max: CategoriesValues.Category3.Max, Category3_LabelsColor: LabelsColor.LabelsCategory3, Category4_Name: CategoriesName.Category4, Category4_Min: CategoriesValues.Category4.Min, Category4_Max: CategoriesValues.Category4.Max, Category4_LabelsColor: LabelsColor.LabelsCategory4}, function(ServerResponse){
+            $('.card-map-preloader').show();
+            $('.sidenav-options-preloader').show();
+
+            if( ServerResponse.Status == "Correct" )
+                M.toast({html: 'Datos guardados correctamente', classes: 'green darken-3 rounded'});
+            else
+                M.toast({html: 'Error al guardar los datos', classes: 'red lighten-2 rounded'});
+        }).done(function(){
+            $('.card-map-preloader').fadeOut(); 
+            $('.sidenav-options-preloader').fadeOut();
+
+            $('.fixed-action-btn').fadeIn();
+        }).fail(function(error_srv) {
+            $('.card-map-preloader').fadeOut(); 
+            $('.sidenav-options-preloader').fadeOut();
+            EmptyMap();
+
+            M.toast({html: 'Error al actualizar datos', classes: 'red lighten-1 rounded'})
+        });
+    }
+
+    function getDataByMapName(Name){
+        $.post(server_dir, {TypeFunction: "DataByMapName", MapName: Name}, function(DataResults){
+            $('.card-map-preloader').show();
+            $('.sidenav-options-preloader').show();
+            $('.fixed-action-btn').hide();
+
+            var NameCategories = {
+                Category1_Name: DataResults.DatosMapa.Category1_Name,
+                Category2_Name: DataResults.DatosMapa.Category2_Name,
+                Category3_Name: DataResults.DatosMapa.Category3_Name,
+                Category4_Name: DataResults.DatosMapa.Category4_Name
+            };
+
+            var CategoriesValues = {
+                Category1: {
+                    Min: DataResults.DatosMapa.Category1_Min,
+                    Max: DataResults.DatosMapa.Category1_Max
+                },
+                Category2: {
+                    Min: DataResults.DatosMapa.Category2_Min,
+                    Max: DataResults.DatosMapa.Category2_Max
+                },
+                Category3: {
+                    Min: DataResults.DatosMapa.Category3_Min,
+                    Max: DataResults.DatosMapa.Category3_Max
+                },
+                Category4: {
+                    Min: DataResults.DatosMapa.Category4_Min,
+                    Max: DataResults.DatosMapa.Category4_Max
+                }
+            }
+
+            var LabelsColor = {
+                LabelsCategory1: DataResults.DatosMapa.Category1_LabelsColor,
+                LabelsCategory2: DataResults.DatosMapa.Category2_LabelsColor,
+                LabelsCategory3: DataResults.DatosMapa.Category3_LabelsColor,
+                LabelsCategory4: DataResults.DatosMapa.Category4_LabelsColor,
+            }
+
+            var ChangeTitleCategories = {
+                RangeTitle: DataResults.DatosMapa.RangeTitle,
+                RangePorcentage: DataResults.DatosMapa.RangePorcentage
+            }
+
+            var DataTitle = {
+                TitleMap: DataResults.DatosMapa.TitleMap,
+                FontSize: DataResults.DatosMapa.FontSize,
+                FontBold: DataResults.DatosMapa.FontBold,
+                FontItalic: DataResults.DatosMapa.FontItalic
+            }
+
+            setDataCities             ( DataResults.DatosMunicipio            );
+            setMapColor               ( DataResults.DatosMapa.ColorScheme     );
+            setNameCategories         ( NameCategories                        );
+            setCategoriesValues       ( CategoriesValues                      );
+            setLabelsColorByCategory  ( LabelsColor                           );
+            setTitleCategoriesByLimits( ChangeTitleCategories                 );
+            setTitleMap               ( DataTitle                             );
+
+            UpdateAndShowMap();
+        }).done(function(){
+            $('.card-map-preloader').fadeOut(); 
+            $('.sidenav-options-preloader').fadeOut();
+            $('.fixed-action-btn').fadeIn();
+
+            $('.fixed-action-btn').fadeIn();
+        }).fail(function(error_srv) {
+            console.log( error_srv );
+
+            $('.loader-container-table').fadeOut(200);
+            $('#findByParameter').prop('disabled', '');
+
+            $('.card-map-preloader').fadeOut(); 
+            $('.sidenav-options-preloader').fadeOut();
+            EmptyMap();
+        });
+    }
+
+    function putNewMap(MapName){
+        $.post(server_dir, {TypeFunction: "CreateNewMap", NewNameMap: MapName}, function(DataResults){
+            console.log( DataResults );
+            $('.card-map-preloader').show();
+            $('.sidenav-options-preloader').show();
+            $('.fixed-action-btn').hide();
+
+            if( DataResults[0].Status == 'Correct' ){
+                M.toast({html: DataResults[0].Mssg, classes: 'blue darken-2 rounded'});
+            }else{
+                M.toast({html: DataResults[0].Err_Mssg, classes: 'red lighten-2 rounded'});
+            }
+        }).done(function(){
+            $('.card-map-preloader').fadeOut(); 
+            $('.sidenav-options-preloader').fadeOut();
+            $('.fixed-action-btn').fadeIn();
+            updateSelectMaps();
+
+            $('#AddNewMap').modal('close');
+        }).fail(function(error_srv) {
+            console.log( error_srv );
+
+            $('.card-map-preloader').fadeOut();
+            $('.sidenav-options-preloader').fadeOut();
+
+            EmptyMap();
+        });
+    }
+
+    function updateSelectMaps(){
+        console.log('Mostrando resultados => ');
+    
+        $.post(server_dir, {TypeFunction: "OnlyMapsNames"}, function(DataResults){
+            $('.sidenav-options-preloader').show();
+            $('.fixed-action-btn').hide();
+
+            console.log( DataResults );
+            var names = DataResults[0];
+            var options = "";
+
+            for(var i=0; i<names.length; i++){
+                if( names[i] != '' )
+                    options = options + "<option value='"+names[i]+"'>"+names[i]+"</option>";
+            }
+
+            $('#select-maps').empty();
+            $('#select-maps').append( options );
+            $('select').formSelect();
+        }).done(function(){
+            $('.sidenav-options-preloader').fadeOut();
+            $('.fixed-action-btn').show();
+        }).fail(function(error_srv) {
+            $('.sidenav-options-preloader').fadeOut();
+            EmptyMap();
+        }).always(function(){
+            $('.sidenav-options-preloader').fadeOut();
+            $('.fixed-action-btn').show();
+        });   
+    }
+
+    function dataMap2Object(){
+        var titleByLimits = getChangeTitleCategoriesByLimits();
+        var MapData = getDataCities();
+        var MapColor = getMapColor();
+        var CategoriesName = getNameCategories();
+        var CategoriesValues = getCategoriesValues();
+        var LabelsColor = getLabelsColorByCategory();
+        var titleFormat = getTitleMap();
+
+        var setDataMapObj = {
+            //  Trigger function
+            TypeFunction: "setDataMap",
+
+            //  Datos por municipio
+            AbasoloValue:                   MapData[ 0],
+            AcambaroValue:                  MapData[ 1],
+            SanMiguelValue:                 MapData[ 2],
+            ApaseoElAltoValue:              MapData[ 3],
+            ApaseoElGrandeValue:            MapData[ 4],
+            AtarjeaValue:                   MapData[ 5],
+            CelayaValue:                    MapData[ 6],
+            ManuelDobladoValue:             MapData[ 7],
+            ComonfortValue:                 MapData[ 8],
+            CoroneoValue:                   MapData[ 9],
+            CortazarValue:                  MapData[10],
+            CueramaroValue:                 MapData[11],
+            DoctorMoraValue:                MapData[12],
+            DoloresHidalgoValue:            MapData[13],
+            GuanajuatoValue:                MapData[14],
+            HuanimaroValue:                 MapData[15],
+            IrapuatoValue:                  MapData[16],
+            JaralDelProgesoValue:           MapData[17],
+            JerecuaroValue:                 MapData[18],
+            LeonValue:                      MapData[19],
+            MoroleonValue:                  MapData[20],
+            OcampoValue:                    MapData[21],
+            PenjamoValue:                   MapData[22],
+            PuebloNuevoValue:               MapData[23],
+            PurisimaDelRinconValue:         MapData[24],
+            RomitaValue:                    MapData[25],
+            SalamancaValue:                 MapData[26],
+            SalvatierraValue:               MapData[27],
+            SanDiegoDeLaUnionValue:         MapData[28],
+            SanFelipeValue:                 MapData[29],
+            SanFranciscoDelRinconValue:     MapData[30],
+            SanJoseIturbideValue:           MapData[31],
+            SanLuisDeLaPazValue:            MapData[32],
+            SantaCatarinaValue:             MapData[33],
+            JuventinoRosasValue:            MapData[34],
+            SantiagoMaravatíoValue:         MapData[35],
+            SilaoValue:                     MapData[36],
+            TarandacuaoValue:               MapData[37],
+            TarimoroValue:                  MapData[38],
+            TierraBlancaValue:              MapData[39],
+            UriangatoValue:                 MapData[40],
+            ValleDeSantiagoValue:           MapData[41],
+            VictoriaValue:                  MapData[42],
+            VillagranValue:                 MapData[43],
+            XichuValue:                     MapData[44],
+            YuririaValue:                   MapData[45],
+            //  Formato del título
+            TitleMap: titleFormat.TitleMap,
+            FontSize: titleFormat.FontSize,
+            FontBold: titleFormat.FontBold,
+            FontItalic: titleFormat.FontItalic,
+
+            //  Color del mapa
+            ColorScheme:   MapColor.Name,
+
+            //  Rangos automáticos
+            RangeTitle:  titleByLimits.RangeTitle,
+            RangePorcentage: titleByLimits.RangePorcentage,
+
+            //  Parámetros por categoría
+            //  Cat 1
+            Category1_Name:         CategoriesName.Category1,
+            Category1_Min:          CategoriesValues.Category1.Min,
+            Category1_Max:          CategoriesValues.Category1.Max,
+            Category1_LabelsColor:  LabelsColor.LabelsCategory1,
+
+            //  Cat 2
+            Category2_Name:         CategoriesName.Category2,
+            Category2_Min:          CategoriesValues.Category2.Min,
+            Category2_Max:          CategoriesValues.Category2.Max,
+            Category2_LabelsColor:  LabelsColor.LabelsCategory2,
+
+            //  Cat 3
+            Category3_Name:         CategoriesName.Category3,
+            Category3_Min:          CategoriesValues.Category3.Min,
+            Category3_Max:          CategoriesValues.Category3.Max,
+            Category3_LabelsColor:  LabelsColor.LabelsCategory3,
+
+            //  Cat 4
+            Category4_Name:         CategoriesName.Category4,
+            Category4_Min:          CategoriesValues.Category4.Min,
+            Category4_Max:          CategoriesValues.Category4.Max,
+            Category4_LabelsColor:  LabelsColor.LabelsCategory4
+        }
+
+        return setDataMapObj;
+    }
+
     $(function(){
         $('.sidenav').sidenav();
         $('.collapsible').collapsible();
         $('.tooltipped').tooltip();
+        $('.modal').modal();
         $('.fixed-action-btn').floatingActionButton({
             hoverEnabled: false
         });
@@ -1097,13 +1381,27 @@
         getDataFromServer();
     });
 
+    $('.btn-save-map-data').on('click', function(){
+        setDataServer();
+    });
+
+    $('.btn-add-new-map').on('click', function(){
+        var new_map = $('#txtNameNewMap').val();
+        putNewMap( new_map );
+    });
+
+    $('#select-maps').on('change', function(){
+        var selected_map = $(this).val();
+        console.log( selected_map );
+        
+        getDataByMapName( selected_map );
+    });
+
     $('.btnConvert2Image').on('click', function(){
         html2canvas( $('.card-map')[0] ).then(function(Mapa) {
-            $('.card-map').append('<h2>Descargando imagen</h2>');
+            M.toast({html: 'Descargando imagen', classes: 'blue lighten-2 rounded'});
+
             return Canvas2Image.saveAsPNG(Mapa);
-            //$(".response").append(canvas);
-        }).then(function(){
-            $('.card-map').append('<h2>Imagen descargada</h2>');
         });
     });
 
@@ -1144,7 +1442,7 @@
         if( size_title < 35 )
             size_title = size_title + 1;
         else
-            M.toast({html: 'Max 35', classes: 'rounded'});
+            M.toast({html: 'Tamaño máximo de 35px', classes: 'rounded'});
 
         $('.map-title').css('font-size', size_title, 'important');
         $('#txt-size-text').val(size_title);
@@ -1156,7 +1454,7 @@
         if( size_title > 20 )
             size_title = size_title - 1;
         else
-            M.toast({html: 'Min 20', classes: 'rounded'});
+            M.toast({html: 'Tamaño mínimo de 20px', classes: 'rounded'});
     
         $('.map-title').css('font-size', size_title, 'important');
         $('#txt-size-text').val(size_title);
@@ -1196,6 +1494,8 @@
             $('.map-title').css('font-weight', 'bold');
         else
             $('.map-title').css('font-weight', 'normal');
+
+        UpdateAndShowMap();
     });
 
     $('#checkboxTextItalic').on('change', function(){
@@ -1205,6 +1505,8 @@
             $('.map-title').css('font-style', 'italic');
         else
             $('.map-title').css('font-style', 'normal');
+
+        UpdateAndShowMap();
     });
 
     // ACTIVATE THE DIFFERENTS SIDEBARS

@@ -113,8 +113,8 @@ body{
     .fixed-action-btn {
         display: none;
         position: fixed !important;
-        top: 5% !important;
-        left: 25.5rem !important;
+        top: 13% !important;
+        left: 24% !important;
         bottom: 0 !important;
         right: 0 !important;
         width: 60px !important;
@@ -125,7 +125,7 @@ body{
     }
 
     .fixed-action-btn.direction-right ul li {
-        margin: 7.5px 0 0 8px !important;
+        margin: 5px 0 0 8px !important;
     }
 
     .btn-save-map{
@@ -141,6 +141,19 @@ body{
         max-height: 15px !important;
         height: 15px !important;
     }
+
+    #AddNewMap{
+        border-radius: 15px !important;
+        width: 40% !important;
+    }
+
+    #txtNameNewMap{
+        height: 100px !important;
+        font-size: 38px;
+        text-align: center; 
+    }
+
+
 
     /*
     .btn-new-map {
@@ -295,7 +308,7 @@ body{
     }
 
     .sidenav-overlay{
-        background: none !important;
+        
     }
 
     .border-radius{
