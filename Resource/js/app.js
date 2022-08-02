@@ -1113,6 +1113,8 @@
                 M.toast({html: 'Datos guardados correctamente', classes: 'green darken-3 rounded'});
             else
                 M.toast({html: 'Error al guardar los datos', classes: 'red lighten-2 rounded'});
+
+            console.log( ServerResponse );
         }).done(function(){
             $('.card-map-preloader').fadeOut(); 
             $('.sidenav-options-preloader').fadeOut();
