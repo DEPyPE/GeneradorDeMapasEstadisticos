@@ -501,52 +501,52 @@
     function getDataCities(){
 
         var MapData = [
-                AbasoloValue = $('#txtAbasoloValue').val(),
-                AcambaroValue = $('#txtAcambaroValue').val(),
-                SanMiguelValue = $('#txtSanMiguelValue').val(),
-                ApaseoElAltoValue = $('#txtApaseoElAltoValue').val(),
-                ApaseoElGrandeValue = $('#txtApaseoElGrandeValue').val(),
-                AtarjeaValue = $('#txtAtarjeaValue').val(),
-                CelayaValue = $('#txtCelayaValue').val(),
-                ManuelDobladoValue = $('#txtManuelDobladoValue').val(),
-                ComonfortValue = $('#txtComonfortValue').val(),
-                CoroneoValue = $('#txtCoroneoValue').val(),
-                CortazarValue = $('#txtCortazarValue').val(),
-                CueramaroValue = $('#txtCueramaroValue').val(),
-                DoctorMoraValue = $('#txtDoctorMoraValue').val(),
-                DoloresHidalgoValue = $('#txtDoloresHidalgoValue').val(),
-                GuanajuatoValue = $('#txtGuanajuatoValue').val(),
-                HuanimaroValue = $('#txtHuanimaroValue').val(),
-                IrapuatoValue = $('#txtIrapuatoValue').val(),
-                JaralDelProgesoValue = $('#txtJaralDelProgesoValue').val(),
-                JerecuaroValue = $('#txtJerecuaroValue').val(),
-                LeonValue = $('#txtLeonValue').val(),
-                MoroleonValue = $('#txtMoroleonValue').val(),
-                OcampoValue = $('#txtOcampoValue').val(),
-                PenjamoValue = $('#txtPenjamoValue').val(),
-                PuebloNuevoValue = $('#txtPuebloNuevoValue').val(),
-                PurisimaDelRinconValue = $('#txtPurisimaDelRinconValue').val(),
-                RomitaValue = $('#txtRomitaValue').val(),
-                SalamancaValue = $('#txtSalamancaValue').val(),
-                SalvatierraValue = $('#txtSalvatierraValue').val(),
-                SanDiegoDeLaUnionValue = $('#txtSanDiegoDeLaUnionValue').val(),
-                SanFelipeValue = $('#txtSanFelipeValue').val(),
-                SanFranciscoDelRinconValue = $('#txtSanFranciscoDelRinconValue').val(),
-                SanJoseIturbideValue = $('#txtSanJoseIturbideValue').val(),
-                SanLuisDeLaPazValue = $('#txtSanLuisDeLaPazValue').val(),
-                SantaCatarinaValue = $('#txtSantaCatarinaValue').val(),
-                JuventinoRosasValue = $('#txtSantaCruzDeJuventinoRosasValue').val(),
-                SantiagoMaravatíoValue = $('#txtSantiagoMaravatíoValue').val(),
-                SilaoValue = $('#txtSilaoValue').val(),
-                TarandacuaoValue = $('#txtTarandacuaoValue').val(),
-                TarimoroValue = $('#txtTarimoroValue').val(),
-                TierraBlancaValue = $('#txtTierraBlancaValue').val(),
-                UriangatoValue = $('#txtUriangatoValue').val(),
-                ValleDeSantiagoValue = $('#txtValleDeSantiagoValue').val(),
-                VictoriaValue = $('#txtVictoriaValue').val(),
-                VillagranValue = $('#txtVillagranValue').val(),
-                XichuValue = $('#txtXichuValue').val(),
-                YuririaValue = $('#txtYuririaValue').val()
+                AbasoloValue = parseFloat( $('#txtAbasoloValue').val() ),
+                AcambaroValue = parseFloat( $('#txtAcambaroValue').val() ),
+                SanMiguelValue = parseFloat( $('#txtSanMiguelValue').val() ),
+                ApaseoElAltoValue = parseFloat( $('#txtApaseoElAltoValue').val() ),
+                ApaseoElGrandeValue = parseFloat( $('#txtApaseoElGrandeValue').val() ),
+                AtarjeaValue = parseFloat( $('#txtAtarjeaValue').val() ),
+                CelayaValue = parseFloat( $('#txtCelayaValue').val() ),
+                ManuelDobladoValue = parseFloat( $('#txtManuelDobladoValue').val() ),
+                ComonfortValue = parseFloat( $('#txtComonfortValue').val() ),
+                CoroneoValue = parseFloat( $('#txtCoroneoValue').val() ),
+                CortazarValue = parseFloat( $('#txtCortazarValue').val() ),
+                CueramaroValue = parseFloat( $('#txtCueramaroValue').val() ),
+                DoctorMoraValue = parseFloat( $('#txtDoctorMoraValue').val() ),
+                DoloresHidalgoValue = parseFloat( $('#txtDoloresHidalgoValue').val() ),
+                GuanajuatoValue = parseFloat( $('#txtGuanajuatoValue').val() ),
+                HuanimaroValue = parseFloat( $('#txtHuanimaroValue').val() ),
+                IrapuatoValue = parseFloat( $('#txtIrapuatoValue').val() ),
+                JaralDelProgesoValue = parseFloat( $('#txtJaralDelProgesoValue').val() ),
+                JerecuaroValue = parseFloat( $('#txtJerecuaroValue').val() ),
+                LeonValue = parseFloat( $('#txtLeonValue').val() ),
+                MoroleonValue = parseFloat( $('#txtMoroleonValue').val() ),
+                OcampoValue = parseFloat( $('#txtOcampoValue').val() ),
+                PenjamoValue = parseFloat( $('#txtPenjamoValue').val() ),
+                PuebloNuevoValue = parseFloat( $('#txtPuebloNuevoValue').val() ),
+                PurisimaDelRinconValue = parseFloat( $('#txtPurisimaDelRinconValue').val() ),
+                RomitaValue = parseFloat( $('#txtRomitaValue').val() ),
+                SalamancaValue = parseFloat( $('#txtSalamancaValue').val() ),
+                SalvatierraValue = parseFloat( $('#txtSalvatierraValue').val() ),
+                SanDiegoDeLaUnionValue = parseFloat( $('#txtSanDiegoDeLaUnionValue').val() ),
+                SanFelipeValue = parseFloat( $('#txtSanFelipeValue').val() ),
+                SanFranciscoDelRinconValue = parseFloat( $('#txtSanFranciscoDelRinconValue').val() ),
+                SanJoseIturbideValue = parseFloat( $('#txtSanJoseIturbideValue').val() ),
+                SanLuisDeLaPazValue = parseFloat( $('#txtSanLuisDeLaPazValue').val() ),
+                SantaCatarinaValue = parseFloat( $('#txtSantaCatarinaValue').val() ),
+                JuventinoRosasValue = parseFloat( $('#txtSantaCruzDeJuventinoRosasValue').val() ),
+                SantiagoMaravatíoValue = parseFloat( $('#txtSantiagoMaravatíoValue').val() ),
+                SilaoValue = parseFloat( $('#txtSilaoValue').val() ),
+                TarandacuaoValue = parseFloat( $('#txtTarandacuaoValue').val() ),
+                TarimoroValue = parseFloat( $('#txtTarimoroValue').val() ),
+                TierraBlancaValue = parseFloat( $('#txtTierraBlancaValue').val() ),
+                UriangatoValue = parseFloat( $('#txtUriangatoValue').val() ),
+                ValleDeSantiagoValue = parseFloat( $('#txtValleDeSantiagoValue').val() ),
+                VictoriaValue = parseFloat( $('#txtVictoriaValue').val() ),
+                VillagranValue = parseFloat( $('#txtVillagranValue').val() ),
+                XichuValue = parseFloat( $('#txtXichuValue').val() ),
+                YuririaValue = parseFloat( $('#txtYuririaValue').val() )
         ]
 
         return MapData;
@@ -611,10 +611,10 @@
 
     function getCategoriesValues(){
         var Categories = {
-            Category1: {Min: $('#txtCategory1_Min').val(), Max: $('#txtCategory1_Max').val()},
-            Category2: {Min: $('#txtCategory2_Min').val(), Max: $('#txtCategory2_Max').val()},
-            Category3: {Min: $('#txtCategory3_Min').val(), Max: $('#txtCategory3_Max').val()},
-            Category4: {Min: $('#txtCategory4_Min').val(), Max: $('#txtCategory4_Max').val()}
+            Category1: {Min: parseFloat( $('#txtCategory1_Min').val() ), Max: parseFloat( $('#txtCategory1_Max').val() )},
+            Category2: {Min: parseFloat( $('#txtCategory2_Min').val() ), Max: parseFloat( $('#txtCategory2_Max').val() )},
+            Category3: {Min: parseFloat( $('#txtCategory3_Min').val() ), Max: parseFloat( $('#txtCategory3_Max').val() )},
+            Category4: {Min: parseFloat( $('#txtCategory4_Min').val() ), Max: parseFloat( $('#txtCategory4_Max').val() )}
         }
 
         return Categories;
@@ -1004,10 +1004,11 @@
     }
 
     function getDataFromServer(){
-        console.log('Mostrando resultados => ');
+        console.log('Mostrando respuesta del servidor => ');
     
         $.post(server_dir, {TypeFunction: "AllMapsNames"}, function(DataResults){
             var names = DataResults.NameMaps[0];
+            console.log( DataResults );
             var options = "";
 
             for(var i=0; i<names.length; i++){
@@ -1134,6 +1135,7 @@
             $('.card-map-preloader').show();
             $('.sidenav-options-preloader').show();
             $('.fixed-action-btn').hide();
+            console.log( DataResults );
 
             var NameCategories = {
                 Category1_Name: DataResults.DatosMapa.Category1_Name,
@@ -1369,11 +1371,18 @@
         return setDataMapObj;
     }
 
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var options = '';
+        M.Dropdown.init(elems, options);
+    });
+
     $(function(){
         $('.sidenav').sidenav();
         $('.collapsible').collapsible();
         $('.tooltipped').tooltip();
         $('.modal').modal();
+        
         $('.fixed-action-btn').floatingActionButton({
             hoverEnabled: false
         });
@@ -1512,33 +1521,119 @@
     });
 
     // ACTIVATE THE DIFFERENTS SIDEBARS
-    $('.btn-format-title').on('click', function(){
+    $('.btn-format-title, .collection-options .collection-item-title').on('click', function(){
         $('.collection-data').hide();
         $('.collection-title-format').show();
         $('.collection-map-color-palette').hide();
         $('.collection-map-categories').hide();
     });
 
-    $('.btn-data-city').on('click', function(){
+    $('.btn-data-city, .collection-options .collection-item-data').on('click', function(){
         $('.collection-data').show();
         $('.collection-title-format').hide();
         $('.collection-map-color-palette').hide();
         $('.collection-map-categories').hide();
     });
 
-    $('.collection-map-categories-btn').on('click', function(){
+    $('.collection-map-categories-btn, .collection-options .collection-item-categories').on('click', function(){
         $('.collection-data').hide();
         $('.collection-title-format').hide();
         $('.collection-map-color-palette').hide();
         $('.collection-map-categories').show();
     });
 
-    $('.btn-map-color-pallete').on('click', function(){
+    $('.btn-map-color-pallete, .collection-options .collection-item-colors').on('click', function(){
         $('.collection-data').hide();
         $('.collection-title-format').hide();
         $('.collection-map-color-palette').show();
         $('.collection-map-categories').hide();
     });
+
+    //  TRIGGERS FOR THE MEDIUM SIZE MENU
+
+    $('').on('click', function(){
+        $('.collection-data').show();
+        $('.collection-title-format').hide();
+        $('.collection-map-color-palette').hide();
+        $('.collection-map-categories').hide();
+    });
+
+    $('').on('click', function(){
+        $('.collection-data').hide();
+        $('.collection-title-format').show();
+        $('.collection-map-color-palette').hide();
+        $('.collection-map-categories').hide();
+    });
+
+    $('').on('click', function(){
+        $('.collection-data').hide();
+        $('.collection-title-format').hide();
+        $('.collection-map-color-palette').show();
+        $('.collection-map-categories').hide();
+    });
+
+    $('').on('click', function(){
+        $('.collection-data').hide();
+        $('.collection-title-format').hide();
+        $('.collection-map-color-palette').hide();
+        $('.collection-map-categories').show();
+    });
+
+    //  Hover
+    $('.collection-options a.collection-item').on('mouseenter', function(){
+        //  Elementos hermano
+        $(this).siblings('a').css({
+            'width': '60px',
+            'background-color': 'rgba(0, 0, 0, 0)'
+        })
+
+        $(this).siblings('a').find('.title-option').css({
+            'display': 'none',
+            'opacity': '0',
+            'color': 'black'
+        });
+        
+        //  Elemento actual
+        $(this).css({
+            'width': '160px',
+            'background-color': 'rgba(220, 220, 220, 0.9)'
+        });
+
+        $(this).find('.title-option').css({
+            'display': 'inline-table',
+            'opacity': '1',
+            'color': 'black'
+        }); 
+    });
+
+    $('.collection-options a.collection-item').on('mouseleave', function(){
+        //  Elemento actual
+        $(this).css({
+            'width': '40px',
+            'background-color': 'white'
+        });
+
+        $(this).find('.title-option').css({
+            'display': 'inline-table',
+            'opacity': '0',
+            'color': 'white'
+        }); 
+    });
+
+    $('.dropdown-trigger-maps').on('click', function(){
+        //  Elemento actual
+        $(this).css({
+            'width': '40px',
+            'background-color': 'white'
+        });
+
+        $(this).find('.title-option').css({
+            'display': 'inline-table',
+            'opacity': '0',
+            'color': 'white'
+        }); 
+    });
+
 
 
 
